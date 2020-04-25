@@ -21,6 +21,7 @@ public class Mixer : MonoBehaviour {
     }
 
     if (PlayerInteracter.Instance.grabbing &&
+        PlayerInteracter.Instance.selected.GetComponent<Bottle>() &&
         Input.GetMouseButton(0) &&
         Physics.Raycast(PlayerInteracter.Instance.interactiveRay,
                         out hit, 10, LayerMask.GetMask("mixer"))) {
