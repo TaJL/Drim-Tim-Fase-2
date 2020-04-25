@@ -6,13 +6,22 @@ public class Mixer : MonoBehaviour {
   public SkinnedMeshRenderer skin;
 
   void Update () {
-    if (Input.GetMouseButton(0) &&
-        PlayerInteracter.Instance.grabbing) {
-      float fillSpeed = PlayerInteracter.Instance.target
-        .GetComponentInChildren<Bottle>().mixerFillSpeed;
+    RaycastHit hit;
 
-      skin.SetBlendShapeWeight(0, skin.GetBlendShapeWeight(0) +
-                               fillSpeed * Time.deltaTime);
+    if (PlayerInteracter.Instance.grabbing &&
+        Input.GetMouseButton(0) &&
+        Physics.Raycast(PlayerInteracter.Instance.interactiveRay,
+                        out hit, 10, LayerMask.GetMask("mixer"))) {
+
+      Bottle bottle = PlayerInteracter.Instance.target
+        .GetComponentInChildren<Bottle>();
+
+      float value =
+        Mathf.Clamp(skin.GetBlendShapeWeight(0) -
+                    bottle.mixerFillSpeed * Time.deltaTime,
+                    0, 100);
+
+      skin.SetBlendShapeWeight(0, value);
 
     }
   }

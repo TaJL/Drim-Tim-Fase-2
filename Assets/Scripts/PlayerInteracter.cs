@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
+  public Ray interactiveRay;
   public Interactable selected;
   public Transform target;
   public bool grabbing = false;
 
   void Update () {
+    interactiveRay =
+      Camera.main.ScreenPointToRay(new Vector2(Screen.width/2f, Screen.height/2f));
+
     UpdateSelected();
     UpdateGrab();
   }
@@ -30,10 +34,9 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
   void UpdateSelected () {
     if (grabbing) return;
 
-    Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width/2f, Screen.height/2f));
     RaycastHit hit;
 
-    if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("interactables"))) {
+    if (Physics.Raycast(interactiveRay, out hit, 10, LayerMask.GetMask("interactables"))) {
       Interactable thing = hit.collider.GetComponentInParent<Interactable>();
 
       if (!thing) return;
