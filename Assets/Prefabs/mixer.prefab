@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb142362856b50458fb4cec37b623d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skin: {fileID: 2839289367998134194}
+  skin: {fileID: 2289431710326936375}
+  material: {fileID: 0}
 --- !u!54 &3555606071119016226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -268,9 +269,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8587176812546023704}
   m_PrefabAsset: {fileID: 0}
---- !u!137 &2839289367998134194 stripped
+--- !u!137 &2289431710326936375 stripped
 SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5786256303497451178, guid: a3c9dd99144717d4b8c9c85a206cd354,
+  m_CorrespondingSourceObject: {fileID: 7561110372842451503, guid: a3c9dd99144717d4b8c9c85a206cd354,
     type: 3}
   m_PrefabInstance: {fileID: 8587176812546023704}
   m_PrefabAsset: {fileID: 0}
