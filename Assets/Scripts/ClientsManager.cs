@@ -46,13 +46,6 @@ public class ClientsManager : MonoBehaviour
         seat.Occupy();
         InstantiateClient(seat);
     }
-    public void InstantiateClient(Seat destination)
-    {
-        Client client = (Instantiate(client_prefab, transform.position, Quaternion.identity) as GameObject).GetComponent<Client>();
-        client.SpawnAndSetDestination(destination.position);
-        client.OnClientStandUp += delegate() { ClientStandUp(destination);  };
-    }
-
     public void ClientStandUp(Seat seat)
     {
         seat.Free();
@@ -62,6 +55,12 @@ public class ClientsManager : MonoBehaviour
             pending_clients.Dequeue();
             SpawnClient(seat);
         }
+    }
+    public void InstantiateClient(Seat destination)
+    {
+        Client client = (Instantiate(client_prefab, transform.position, Quaternion.identity) as GameObject).GetComponent<Client>();
+        client.SpawnAndSetDestination(destination.position);
+        client.OnClientStandUp += delegate() { ClientStandUp(destination);  };
     }
     void Update()
     {
