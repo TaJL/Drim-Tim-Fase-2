@@ -41,4 +41,10 @@ public class Mixer : MonoBehaviour {
       }
     }
   }
+
+  public void Empty () {
+    content.Clear();
+    skin.SetBlendShapeWeight(0,100);
+    material.color = new Color(1,1,1,1);
+  }
 }
