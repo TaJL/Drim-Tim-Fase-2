@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using  UnityEngine.Events;
 
@@ -26,6 +27,16 @@ public class Client : MonoBehaviour
     private Vector3 origin;
     private Vector3 destination;
 
+    private Recipe order;
+
+
+    private TextMeshPro text_globe;
+    
+    private void Start()
+    {
+        text_globe = GetComponentInChildren<TextMeshPro>();
+        text_globe.enabled = false;
+    }
 
     public void SpawnAndSetDestination(Vector3 _destination)
     {
@@ -33,7 +44,21 @@ public class Client : MonoBehaviour
         destination = _destination;
         StartCoroutine(StartRoutine());
     }
-    
+
+    private void SelectDrink()
+    {
+        order = GameManager.GetRandomDrink();
+        text_globe.text = string.Format("Can I have a: {0} please?",order.NameOfDrink);
+    }
+    public void ShoutOrder()
+    {
+        text_globe.enabled = true;
+    }
+
+    private void ShutUp()
+    {
+        text_globe.enabled = false;
+    }
     private IEnumerator StartRoutine()
     {
         yield return StartCoroutine(WalkInRoutine());
@@ -63,8 +88,11 @@ public class Client : MonoBehaviour
     private IEnumerator OrderRoutine()
     {
         current_state = ClientStates.Ordering;
-
+        SelectDrink();
+        ShoutOrder();
+        print("Can I have a: "+order.NameOfDrink);
         yield return new WaitForSeconds(ordering_time);
+        ShutUp();
     }
 
     private IEnumerator WaitingRoutine()

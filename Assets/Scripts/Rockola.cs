@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class Rockola : MonoBehaviour
+{
+    public AudioClip[] clips;
+    private int current_playing = 0;
+    private AudioSource audio_source;
+    private TextMeshPro screen_text;
+
+    private Coroutine wait_routine;
+    // Start is called before the first frame update
+    void Start()
+    {
+        audio_source = GetComponent<AudioSource>();
+        screen_text = GetComponentInChildren<TextMeshPro>();
+        PlayClip(current_playing);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray =
+                Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
+
+            if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("3DButton")))
+            {
+                if (hit.collider.CompareTag("Right"))
+                {
+                    PlayNext();
+                }
+                else if(hit.collider.CompareTag("Left"))
+                {
+                    PlayPrevious();
+                }
+            }
+        }
+    }
+
+    public void PlayClip(int index)
+    {
+        if(clips.Length == 0)
+            return;
+        
+        audio_source.clip = clips[index];
+        audio_source.Play();
+        SetText();
+        if(wait_routine != null)
+            StopCoroutine(wait_routine);
+        wait_routine = StartCoroutine(WaitUntilEnd());
+    }
+
+    private void SetText()
+    {
+        screen_text.text = string.Format("Now playing: {0}",audio_source.clip.name);
+    }
+    public void PlayNext()
+    {
+        current_playing = (current_playing + clips.Length + 1) % clips.Length;
+        PlayClip(current_playing);
+    }
+    public void PlayPrevious()
+    {
+        current_playing = (current_playing + clips.Length - 1) % clips.Length;
+        PlayClip(current_playing);
+    }
+    private IEnumerator WaitUntilEnd()
+    {
+        yield return new WaitUntil(delegate { return !audio_source.isPlaying; });
+        PlayNext();
+    }
+}
