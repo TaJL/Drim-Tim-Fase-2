@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ea5be1913dc7543aeff6e8e14637b4, type: 3}
   m_Name: ejemplo de receta
   m_EditorClassIdentifier: 
-  NameOfDrink: Ejemplo
+  NameOfDrink: ejemplo
   reagents:
   - reagentName: vino
     amount: 1
