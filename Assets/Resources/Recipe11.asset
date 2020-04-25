@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ea5be1913dc7543aeff6e8e14637b4, type: 3}
-  m_Name: ejemplo de receta
+  m_Name: Recipe11
   m_EditorClassIdentifier: 
-  NameOfDrink: ejemplo
+  NameOfDrink: Fernet con Coca
   reagents:
-  - reagentName: vino
+  - reagentName: Fernet
     amount: 1
-  - reagentName: ron
-    amount: 2
+  - reagentName: Gaseosa
+    amount: 4
