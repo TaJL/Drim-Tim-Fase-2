@@ -28,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.222, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4095767133657404541}
+  - {fileID: 4016383968671470892}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerFillSpeed: 25
---- !u!1001 &9056072888008261479
+  reagentData:
+    liquidColor: {r: 1, g: 1, b: 1, a: 1}
+    reagentName: 
+--- !u!1001 &8270785116048277046
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -70,17 +73,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f0808a8fd3c10534f9c95f76d982b4cb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f0808a8fd3c10534f9c95f76d982b4cb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f0808a8fd3c10534f9c95f76d982b4cb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f0808a8fd3c10534f9c95f76d982b4cb,
         type: 3}
@@ -117,31 +120,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c219b1297948d6d49a1ff4a0282c5925, type: 2}
-    - target: {fileID: -1895449397199787384, guid: f0808a8fd3c10534f9c95f76d982b4cb,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: f0808a8fd3c10534f9c95f76d982b4cb,
         type: 3}
       propertyPath: m_Name
-      value: model
+      value: bottle
       objectReference: {fileID: 0}
     - target: {fileID: 8992529910955779099, guid: f0808a8fd3c10534f9c95f76d982b4cb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f799946988b3e3448b71f8477c632356, type: 2}
-    - target: {fileID: 8992529910955779099, guid: f0808a8fd3c10534f9c95f76d982b4cb,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0808a8fd3c10534f9c95f76d982b4cb, type: 3}
---- !u!4 &4095767133657404541 stripped
+--- !u!4 &4016383968671470892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f0808a8fd3c10534f9c95f76d982b4cb,
     type: 3}
-  m_PrefabInstance: {fileID: 9056072888008261479}
+  m_PrefabInstance: {fileID: 8270785116048277046}
   m_PrefabAsset: {fileID: 0}
