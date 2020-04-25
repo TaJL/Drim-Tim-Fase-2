@@ -445,6 +445,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291869294855166676, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474947047278419659, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 474947048450767963, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_Name
+      value: soda
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305444089528288768, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 11400000, guid: eb693fd06b336ee47b284e734e9fffaa,
+        type: 2}
     - target: {fileID: 7744425659585719356, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_Name
@@ -509,6 +530,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595046549281174, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: reagentData.reagentName
+      value: Tequila
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595046733103377, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: reagentData.reagentName
+      value: Soda
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595046736807989, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: reagentData.reagentName
+      value: Vino
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595047657255186, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: reagentData.reagentName
+      value: "Co\xF1ac"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595047708320641, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: reagentData.reagentName
+      value: Fernet
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595047920213091, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: reagentData.reagentName
+      value: Ron
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33ba8fb53260f9c4b9c30f0182638a5e, type: 3}

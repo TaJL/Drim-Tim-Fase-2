@@ -7,6 +7,7 @@ public class Mixer : MonoBehaviour {
   public Dictionary<Reagent, float> content =
     new Dictionary<Reagent, float>();
   public Material material;
+  public Recipe test;
 
   void OnEnable () {
     material = skin.materials[0];
@@ -14,6 +15,10 @@ public class Mixer : MonoBehaviour {
 
   void Update () {
     RaycastHit hit;
+
+    if (Input.GetKeyDown(KeyCode.Space)) {
+      Evaluate(test);
+    }
 
     if (PlayerInteracter.Instance.grabbing &&
         Input.GetMouseButton(0) &&
@@ -46,5 +51,34 @@ public class Mixer : MonoBehaviour {
     content.Clear();
     skin.SetBlendShapeWeight(0,100);
     material.color = new Color(1,1,1,1);
+  }
+
+  public float Evaluate (Recipe order) {
+    float score = 0;
+
+    Dictionary<string, RequiredReagent> hash =
+      new Dictionary<string, RequiredReagent>();
+
+    foreach (RequiredReagent reagent in order.reagents) {
+      hash[reagent.reagentName] = reagent;
+    }
+
+    float failed = 0;
+    foreach (KeyValuePair<Reagent, float> entry in content) {
+      if (hash.ContainsKey(entry.Key.reagentName)) {
+        float scored =
+          Mathf.Max(0, 1 - Mathf.Abs((entry.Value / 20f) -
+                                     hash[entry.Key.reagentName].amount));
+        print("scored " + scored + " on " + entry.Key.reagentName +
+              " it's required " + hash[entry.Key.reagentName].amount +
+              " but you have " + (entry.Value / 20f));
+        score += scored;
+      } else {
+        print("NOOOO WHY " + entry.Key.reagentName + "?!");
+        failed += entry.Value / 20f;
+      }
+    }
+
+    return failed > 0.1f? 0: score;
   }
 }
