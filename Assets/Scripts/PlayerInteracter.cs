@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerInteracter : MonoBehaviour {
+public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
   public Interactable selected;
   public Transform target;
   public bool grabbing = false;
