@@ -15,9 +15,13 @@ public class ClientsManager : MonoBehaviour
     private Queue pending_clients = new Queue();
     void Start()
     {
-        bar = transform.GetChild(0).GetComponent<Bar>();
+      Initialize();
         StartRoutine();
     }
+
+  void Initialize () {
+    bar = transform.GetChild(0).GetComponent<Bar>();
+  }
 
     public void StartRoutine()
     {
@@ -41,10 +45,16 @@ public class ClientsManager : MonoBehaviour
         }
     }
 
-    private void SpawnClient(Seat seat)
+  public Client SpawnClient () {
+    if (!bar) Initialize();
+
+    return SpawnClient(bar.GetRandomFreeSeat());
+  }
+
+    private Client SpawnClient(Seat seat)
     {
         seat.Occupy();
-        InstantiateClient(seat);
+        return InstantiateClient(seat);
     }
     public void ClientStandUp(Seat seat)
     {
@@ -56,11 +66,13 @@ public class ClientsManager : MonoBehaviour
             SpawnClient(seat);
         }
     }
-    public void InstantiateClient(Seat destination)
+    public Client InstantiateClient(Seat destination)
     {
         Client client = (Instantiate(client_prefab, transform.position, Quaternion.identity) as GameObject).GetComponent<Client>();
         client.SpawnAndSetDestination(destination.position);
         client.OnClientStandUp += delegate() { ClientStandUp(destination);  };
+
+        return client;
     }
     void Update()
     {

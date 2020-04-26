@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour {
   public Light unfocusedLight;
   public Transform target;
 
-  Transform _slot;
+  public Transform _slot;
 
   void OnEnable () {
     _slot = target.parent;
@@ -20,6 +20,6 @@ public class Interactable : MonoBehaviour {
 
   public void Drop () {
     target.SetParent(_slot);
-    Util.Reset(target);
+    //Util.Reset(target);
   }
 }
