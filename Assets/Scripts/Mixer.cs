@@ -83,9 +83,19 @@ public class Mixer : NonPersistantSingleton<Mixer> {
 
     Dictionary<string, RequiredReagent> hash =
       new Dictionary<string, RequiredReagent>();
+    Dictionary<string, float> contentHash =
+      new Dictionary<string, float>();
+
+    foreach (KeyValuePair<Reagent, float> entry in content) {
+      contentHash[entry.Key.reagentName] = entry.Value;
+    }
 
     foreach (RequiredReagent reagent in order.reagents) {
       hash[reagent.reagentName] = reagent;
+      if (!contentHash.ContainsKey(reagent.reagentName)) {
+        print("it's missing " + reagent.reagentName);
+        return 0;
+      }
     }
 
     float failed = 0;

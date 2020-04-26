@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         all_recipes = Resources.LoadAll<Recipe>("");
-        print("Recipes loaded:");
-        foreach (var recipe in all_recipes)
-        {
-            print(recipe.NameOfDrink);
-        }
+        // print("Recipes loaded:");
+        // foreach (var recipe in all_recipes)
+        // {
+        //     print(recipe.NameOfDrink);
+        // }
     }
 
     public static Recipe GetRandomDrink()

@@ -92,7 +92,7 @@ public class Client : MonoBehaviour
         current_state = ClientStates.Ordering;
         SelectDrink();
         ShoutOrder();
-        print("Can I have a: "+order.NameOfDrink);
+        // print("Can I have a: "+order.NameOfDrink);
         yield return new WaitForSeconds(ordering_time);
         ShutUp();
     }
