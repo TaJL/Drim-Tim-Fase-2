@@ -26,7 +26,7 @@ public class Rockola : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray =
-                Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
+                Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("3DButton")))
             {
