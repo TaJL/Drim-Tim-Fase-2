@@ -12,9 +12,13 @@ public class Bar : MonoBehaviour
         seats = new Seat[transform.childCount];
         for (int i = 0; i < seats.Length; i++)
         {
-            seats[i] = new Seat(transform.GetChild(i).position);
+          seats[i] = new Seat(transform.GetChild(i).position, i);
         }
     }
+
+  public Seat GetSeatAt (int index) {
+    return seats[index];
+  }
 
     public Seat GetRandomFreeSeat()
     {

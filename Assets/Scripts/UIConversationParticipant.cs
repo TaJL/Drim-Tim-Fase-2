@@ -9,20 +9,34 @@ public class UIConversationParticipant : MonoBehaviour {
   public Text text;
 
   public IEnumerator _Say (string message) {
+    float elapsed = 0;
+    bool jump = false;
+
     portrait.SetBool("is talking", false);
     animator.SetBool("display", true);
     text.text = "";
-    yield return new WaitForSeconds(1);
+    while (elapsed < 1 && !jump) {
+      elapsed += Time.deltaTime;
+      if (Input.GetKeyDown(KeyCode.Space)) jump = true;
+      yield return null;
+    }
 
+    jump = false;
+    elapsed = 0;
     portrait.SetBool("is talking", true);
-    float elapsed = 0;
     float beginning = Time.time;
     string[] words = message.Split(' ');
 
-    for (int i=0; i<words.Length; i++) {
+    for (int i=0; i<words.Length && !jump; i++) {
+      elapsed = 0;
       text.text += words[i] + " ";
-      yield return new WaitForSeconds(0.05f);
+      while (elapsed < 0.05 || Input.GetKeyDown(KeyCode.Space)) {
+        yield return null;
+        elapsed += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Space)) jump = true;
+      }
     }
+    text.text = message;
 
     elapsed = Time.time - beginning;
     float required = TutorialConversationManager.LECTURE_TIME_PER_WORD *

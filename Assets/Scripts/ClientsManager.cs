@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClientsManager : MonoBehaviour
 {
+  public static event System.Action<Client, int> onClientSpawned;
+
     public GameObject client_prefab;
 
     public float spawn_delay = 4f;
@@ -53,8 +55,11 @@ public class ClientsManager : MonoBehaviour
 
     private Client SpawnClient(Seat seat)
     {
-        seat.Occupy();
-        return InstantiateClient(seat);
+        Client spawned = InstantiateClient(seat);
+        seat.Occupy(spawned);
+
+        if (onClientSpawned != null) onClientSpawned(spawned, seat.index);
+        return spawned;
     }
     public void ClientStandUp(Seat seat)
     {

@@ -16,7 +16,6 @@ public class TutorialConversationManager : MonoBehaviour {
 
   IEnumerator _Display (TutorialConversation conversation) {
     for (int i=0; i<conversation.entries.Length; i++) {
-      print(i + ", " + conversation.entries[i]);
       if (conversation.entries[i].author == ConversationParticipant.Professor) {
         yield return StartCoroutine(professor._Say(conversation.entries[i].message));
       } else {

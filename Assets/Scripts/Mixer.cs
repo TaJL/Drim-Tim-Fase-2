@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Mixer : MonoBehaviour {
+public class Mixer : NonPersistantSingleton<Mixer> {
   public SkinnedMeshRenderer skin;
   public Dictionary<Reagent, float> content =
     new Dictionary<Reagent, float>();
@@ -11,17 +11,13 @@ public class Mixer : MonoBehaviour {
 
   private bool is_pouring = false;
 
-  
+
   void OnEnable () {
     material = skin.materials[0];
   }
 
   void Update () {
     RaycastHit hit;
-
-    if (Input.GetKeyDown(KeyCode.Space)) {
-      Evaluate(test);
-    }
 
     if (PlayerInteracter.Instance.grabbing &&
         PlayerInteracter.Instance.target.GetComponentInChildren<Bottle>() &&
@@ -82,6 +78,7 @@ public class Mixer : MonoBehaviour {
   }
 
   public float Evaluate (Recipe order) {
+    print("EVALUATING! " + order + " " + order.NameOfDrink);
     float score = 0;
 
     Dictionary<string, RequiredReagent> hash =
@@ -109,6 +106,6 @@ public class Mixer : MonoBehaviour {
 
     return failed > 0.1f? 0: score;
   }
-  
+
 
 }
