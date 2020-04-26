@@ -68,7 +68,7 @@ public class Client : MonoBehaviour
         yield return StartCoroutine(WaitingRoutine());
         yield return StartCoroutine(WalkOutRoutine());
         //CALCULATE SCORE HERE
-        print("client ended");
+        // print("client ended");
         if(OnClientEnded != null)
             OnClientEnded(14);//TESTING VALUE
         

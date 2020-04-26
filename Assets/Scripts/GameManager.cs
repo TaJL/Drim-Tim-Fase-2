@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NonPersistantSingleton<GameManager>
 {
+  public static int score = 0;
     private static Recipe[] all_recipes;
     private void Start()
     {
@@ -22,6 +23,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -33,17 +33,17 @@ public class GlassInteraction : MonoBehaviour {
       Mixer mixer = PlayerInteracter.Instance.selected.GetComponent<Mixer>();
       if (!mixer) return;
 
+      TriggerEvaluation();
       mixer.Empty();
       glass.FillWith(mixer.material.color);
-      // glass.onFilled += TriggerEvaluation;
-      TriggerEvaluation();
     }
   }
 
   public void TriggerEvaluation () {
-    // glass.onFilled -= TriggerEvaluation;
+    glass.onFilled -= TriggerEvaluation;
     Seat seat = GetComponentInParent<Bar>().GetSeatAt(this.seat.GetSiblingIndex());
     score = Mixer.Instance.Evaluate(seat.client.order);
+    GameManager.score += (int) score;
   }
 
 
@@ -51,11 +51,17 @@ public class GlassInteraction : MonoBehaviour {
     if (index == seat.GetSiblingIndex()) {
       this.client = client;
       client.OnRequest += HandleRequest;
+      client.OnClientStandUp += HandleStandup;
     }
   }
 
   public void HandleRequest (Recipe request) {
     gameObject.SetActive(true);
     client.OnRequest -= HandleRequest;
+  }
+
+  public void HandleStandup () {
+    client.OnClientStandUp -= HandleStandup;
+    gameObject.SetActive(false);
   }
 }

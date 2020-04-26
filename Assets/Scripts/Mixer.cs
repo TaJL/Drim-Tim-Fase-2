@@ -88,6 +88,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
 
     foreach (KeyValuePair<Reagent, float> entry in content) {
       contentHash[entry.Key.reagentName] = entry.Value;
+      print("this has: " + entry.Key.reagentName);
     }
 
     foreach (RequiredReagent reagent in order.reagents) {
@@ -114,7 +115,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
       }
     }
 
-    return failed > 0.1f? 0: score;
+    return failed > 0.1f? 0: ((score / order.reagents.Length) * 100);
   }
 
 
