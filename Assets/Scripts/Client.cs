@@ -29,10 +29,11 @@ public class Client : MonoBehaviour
     private Vector3 destination;
 
     public Recipe order;
+  public Animator animator;
 
 
     private TextMeshPro text_globe;
-    
+
     private void Start()
     {
         text_globe = GetComponentInChildren<TextMeshPro>();
@@ -63,15 +64,23 @@ public class Client : MonoBehaviour
     }
     private IEnumerator StartRoutine()
     {
+        animator.SetBool("is walking", true);
         yield return StartCoroutine(WalkInRoutine());
+        animator.SetBool("is walking", false);
+        Vector3 forward = transform.position -
+          PlayerInteracter.Instance.transform.position;
+        forward.y = 0;
+        transform.forward = forward;
         yield return StartCoroutine(OrderRoutine());
         yield return StartCoroutine(WaitingRoutine());
+        animator.SetBool("is walking", true);
+        transform.forward = destination - origin;
         yield return StartCoroutine(WalkOutRoutine());
         //CALCULATE SCORE HERE
         // print("client ended");
         if(OnClientEnded != null)
             OnClientEnded(14);//TESTING VALUE
-        
+
         Destroy(this.gameObject);
     }
     private IEnumerator WalkInRoutine()
@@ -83,6 +92,7 @@ public class Client : MonoBehaviour
         {
             counter += Time.deltaTime/walkin_time;
             transform.position = Vector3.Lerp(origin, destination, counter);
+            transform.forward = origin - destination;
             yield return null;
         }
     }
@@ -103,7 +113,7 @@ public class Client : MonoBehaviour
 
         yield return new WaitForSeconds(waiting_time);
     }
-    
+
     private IEnumerator WalkOutRoutine()
     {
         current_state = ClientStates.Walkout;

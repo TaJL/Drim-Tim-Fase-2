@@ -28,7 +28,7 @@ public class GlassInteraction : MonoBehaviour {
     if (Input.GetMouseButtonDown(0) &&
         PlayerInteracter.Instance.grabbing &&
         Physics.Raycast(PlayerInteracter.Instance.interactiveRay, out hit) &&
-        hit.collider.GetComponentInParent<GlassInteraction>()) {
+        hit.collider.GetComponentInParent<GlassInteraction>() == this) {
 
       Mixer mixer = PlayerInteracter.Instance.selected.GetComponent<Mixer>();
       if (!mixer) return;
