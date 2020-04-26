@@ -17,6 +17,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   }
 
   void Update () {
+
     RaycastHit hit;
 
     if (PlayerInteracter.Instance.grabbing &&
