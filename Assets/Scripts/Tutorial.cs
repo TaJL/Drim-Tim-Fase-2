@@ -22,5 +22,10 @@ public class Tutorial : MonoBehaviour {
     TutorialConversationManager.onConversationEnd -= SendTutorialCustomer;
     tutorialClient = clients.SpawnClient();
     tutorialClient.waiting_time = 20;
+    tutorialClient.OnRequest += HandleRequest;
+  }
+
+  public void HandleRequest (Recipe requested) {
+    // TODO
   }
 }
