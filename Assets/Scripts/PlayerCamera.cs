@@ -9,6 +9,12 @@ public class PlayerCamera : MonoBehaviour {
 
   private float rotation_x = 0;
   private float rotation_y = 0;
+
+  void Awake () {
+    rotation_x = transform.rotation.eulerAngles.x;
+    rotation_y = transform.rotation.eulerAngles.y;
+  }
+
   void Update ()
   { 
       rotation_x += -speedY * Input.GetAxis("Mouse Y");
