@@ -4,14 +4,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class UIConversationParticipant : MonoBehaviour {
+  public Animator portrait;
   public Animator animator;
   public Text text;
 
   public IEnumerator _Say (string message) {
+    portrait.SetBool("is talking", false);
     animator.SetBool("display", true);
     text.text = "";
     yield return new WaitForSeconds(1);
 
+    portrait.SetBool("is talking", true);
     float elapsed = 0;
     float beginning = Time.time;
     string[] words = message.Split(' ');
@@ -28,6 +31,9 @@ public class UIConversationParticipant : MonoBehaviour {
     while (elapsed < required && !Input.GetKeyDown(KeyCode.Space)) {
       yield return null;
       elapsed += Time.deltaTime;
+      if (elapsed > required - 1) {
+        portrait.SetBool("is talking", false);
+      }
     }
 
     animator.SetBool("display", false);

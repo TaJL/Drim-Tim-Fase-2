@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pupil portrait
+  m_Controller: {fileID: 9100000, guid: a53f60682b9d09b468f70cfd017ef16f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 461882bf5e2639b4db86739bd21c7002, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 75414b547de3105458d2270e8bda4810, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 813b3a895423a2c49bccc8c127a375b9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: de6248b799790b6458643841a2e330cc, type: 2}
