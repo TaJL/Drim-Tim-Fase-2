@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 3a4742364a6eb25429585f19699c0913
+guid: e6eeb9dd00a3b1f4bb6ef4b0a8b09080
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 649223268058989734
-    second: Button_0
-  - first:
-      213: -9000188618666376746
-    second: Button_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -102,49 +96,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Button_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 370
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2673c2be51d7f2540b72e172db7bddde
-      internalID: 649223268058989734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Button_1
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 10
-        width: 350
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d32a5e9260805be4886d54097c9f4083
-      internalID: -9000188618666376746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

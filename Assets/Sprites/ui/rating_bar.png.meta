@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 3a4742364a6eb25429585f19699c0913
+guid: 5a6ec738623cef1408c96d2ad38d84ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 649223268058989734
-    second: Button_0
+      213: 2032678355951288133
+    second: rating_bar_0
   - first:
-      213: -9000188618666376746
-    second: Button_1
+      213: 2652656074708980651
+    second: rating_bar_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -42,11 +42,11 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Button_0
+      name: rating_bar_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 370
-        height: 100
+        y: 22
+        width: 110
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2673c2be51d7f2540b72e172db7bddde
-      internalID: 649223268058989734
+      spriteID: 6010680be93a515419154d68940c11a8
+      internalID: 2032678355951288133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_1
+      name: rating_bar_1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 350
-        height: 80
+        x: 0
+        y: 0
+        width: 110
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d32a5e9260805be4886d54097c9f4083
-      internalID: -9000188618666376746
+      spriteID: 8a9063ebdf6c15f4da4c58867584c920
+      internalID: 2652656074708980651
       vertices: []
       indices: 
       edges: []

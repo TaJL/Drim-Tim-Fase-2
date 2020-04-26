@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.Events;
 
 public class DrunknessController : MonoBehaviour
@@ -36,6 +35,6 @@ public class DrunknessController : MonoBehaviour
             drunkness = max_drunkness;
         }
 
-        DrunknessUpdate.Invoke(drunkness);
+        DrunknessUpdate.Invoke(drunkness/max_drunkness);
     }
 }
