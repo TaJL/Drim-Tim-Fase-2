@@ -317,7 +317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &456463271
 Transform:
   m_ObjectHideFlags: 0
@@ -346,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clients: {fileID: 862923899}
   tutorialClient: {fileID: 0}
+  manager: {fileID: 1528866436}
+  conversation: {fileID: 11400000, guid: f30a200e166cf1342aed1beb88d1a374, type: 2}
 --- !u!1 &567434238
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +565,7 @@ PrefabInstance:
     - target: {fileID: 7788012486896247843, guid: 2182ecf17cb4ec847be5f7dcd940d904,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7788012486896247853, guid: 2182ecf17cb4ec847be5f7dcd940d904,
         type: 3}
@@ -731,6 +733,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5424626442891467276}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1528866436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5424626442167925896, guid: cabcd9e59ee21ae4599618043d6f9b11,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424626442891467276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ce67ff1e43e0c4f8dbf0c42007faef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597976735
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1597976736
 Transform:
   m_ObjectHideFlags: 0
@@ -781,6 +795,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 319818018}
     m_Modifications:
+    - target: {fileID: 5424626441778693648, guid: cabcd9e59ee21ae4599618043d6f9b11,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424626441997134812, guid: cabcd9e59ee21ae4599618043d6f9b11,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5424626442167925902, guid: cabcd9e59ee21ae4599618043d6f9b11,
         type: 3}
       propertyPath: m_Name
@@ -1070,6 +1094,26 @@ PrefabInstance:
         type: 3}
       propertyPath: near clip plane
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425660086226628, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.11307404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425660086226628, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.116742544
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425660086226628, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.1981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425660086226629, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 194.99998
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660426309289, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}

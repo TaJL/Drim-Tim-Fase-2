@@ -3,17 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TutorialConversationManager : MonoBehaviour {
+  public static event System.Action<TutorialConversation> onConversationEnd;
+
   public UIConversationParticipant professor;
   public UIConversationParticipant pupil;
-  public const float LECTURE_TIME_PER_WORD = 0.4f;
-
-  public TutorialConversation test;
-
-  void Update () {
-    if (Input.GetKeyDown(KeyCode.Q)) {
-      Display(test);
-    }
-  }
+  public const float LECTURE_TIME_PER_WORD = 0.5f;
 
   public void Display (TutorialConversation conversation) {
     StopAllCoroutines();
@@ -29,5 +23,7 @@ public class TutorialConversationManager : MonoBehaviour {
         yield return StartCoroutine(pupil._Say(conversation.entries[i].message));
       }
     }
+
+    if (onConversationEnd != null) onConversationEnd(conversation);
   }
 }

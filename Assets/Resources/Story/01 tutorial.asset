@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: 01 tutorial
   m_EditorClassIdentifier: 
   entries:
-  - message: "Bienvenido a Bartender\xEDa 101, donde aprender\xE1s todo lo necesario
-      para ser un bartender. Presion\xE1 ESPACIO para ver el siguiente mensaje"
+  - message: "Bienvenido a Bartender\xEDa 101. Presion\xE1 ESPACIO para ver el siguiente
+      mensaje"
     author: 1
   - message: "\xA1Wow! \xA1\xE9sto es demasiado realista como para ser una simulaci\xF3n!"
     author: 0
-  - message: "\xA1JAJAJAJA! \xBFdispositivos VR? \xBFEn una universidad p\xFAblica?
+  - message: "\xA1JAJAJAJA! \xBFSimulaci\xF3n? \xBFEn una universidad p\xFAblica?
       es TAAN realista porque es REAL."
     author: 1
-  - message: "\xA1Pero si yo no s\xE9 nada sobre atender un bar! \xBFNo pod\xE9s
-      ense\xF1arme en una clase?"
+  - message: "\xA1Pero yo no s\xE9 atender un bar! \xBFNo pod\xE9s ense\xF1arme en
+      una clase?"
     author: 0
   - message: "\xA1NO POD\xC9S VERLO TODO EN CLASES! ten\xE9s que aprender trabajando
       de gratis para nosotros... digo... haciendo pr\xE1cticas laborales."
     author: 1
-  - message: "\xA1All\xED viene tu primer cliente! atend\xE9lo bien o te repruebo."
+  - message: "\xA1All\xED viene tu primer cliente por la puerta detr\xE1s de t\xED!
+      atend\xE9lo bien o te repruebo."
     author: 1
