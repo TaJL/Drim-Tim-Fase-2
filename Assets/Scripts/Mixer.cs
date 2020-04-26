@@ -78,7 +78,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   }
 
   public float Evaluate (Recipe order) {
-    print("EVALUATING! " + order + " " + order.NameOfDrink);
+    // print("EVALUATING! " + order + " " + order.NameOfDrink);
     float score = 0;
 
     Dictionary<string, RequiredReagent> hash =
@@ -88,15 +88,15 @@ public class Mixer : NonPersistantSingleton<Mixer> {
 
     foreach (KeyValuePair<Reagent, float> entry in content) {
       contentHash[entry.Key.reagentName] = entry.Value;
-      print("this has: " + entry.Key.reagentName);
+      // print("this has: " + entry.Key.reagentName);
     }
 
     foreach (RequiredReagent reagent in order.reagents) {
       hash[reagent.reagentName] = reagent;
-      if (!contentHash.ContainsKey(reagent.reagentName)) {
-        print("it's missing " + reagent.reagentName);
-        return 0;
-      }
+      // if (!contentHash.ContainsKey(reagent.reagentName)) {
+      //   // print("it's missing " + reagent.reagentName);
+      //   return 0;
+      // }
     }
 
     float failed = 0;
@@ -105,12 +105,12 @@ public class Mixer : NonPersistantSingleton<Mixer> {
         float scored =
           Mathf.Max(0, 1 - Mathf.Abs((entry.Value / 20f) -
                                      hash[entry.Key.reagentName].amount));
-        print("scored " + scored + " on " + entry.Key.reagentName +
-              " it's required " + hash[entry.Key.reagentName].amount +
-              " but you have " + (entry.Value / 20f));
+        // print("scored " + scored + " on " + entry.Key.reagentName +
+        //       " it's required " + hash[entry.Key.reagentName].amount +
+        //       " but you have " + (entry.Value / 20f));
         score += scored;
       } else {
-        print("NOOOO WHY " + entry.Key.reagentName + "?!");
+        // print("NOOOO WHY " + entry.Key.reagentName + "?!");
         failed += entry.Value / 20f;
       }
     }
