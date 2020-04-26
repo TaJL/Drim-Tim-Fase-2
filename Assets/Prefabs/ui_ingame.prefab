@@ -1198,8 +1198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1fcbbde3fb76e4e93864d1a2d4744d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratingBar: {fileID: 0}
-  drunknessBar: {fileID: 0}
+  ratingBar: {fileID: 8924759447130322999}
+  drunknessBar: {fileID: 3481522651020187398}
 --- !u!1 &6149969556602086787
 GameObject:
   m_ObjectHideFlags: 0

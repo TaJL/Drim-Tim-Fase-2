@@ -121,6 +121,96 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &173456157
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3784025050727433797, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784025050727433797, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995753420320888919, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_Name
+      value: CrowdSoundController
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519752144904612784, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924434572251056049, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924434572251056049, guid: 47dd9d455726b8d4eaa494ab5e587146,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 414120622890464991, guid: 47dd9d455726b8d4eaa494ab5e587146, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 47dd9d455726b8d4eaa494ab5e587146, type: 3}
 --- !u!1 &586521942
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rockola
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930268228376031383, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1930268228774925546, guid: b34ff32820cc0ca428e6367232153604,
         type: 3}
