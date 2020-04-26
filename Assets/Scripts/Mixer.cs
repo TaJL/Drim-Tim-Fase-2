@@ -9,6 +9,9 @@ public class Mixer : MonoBehaviour {
   public Material material;
   public Recipe test;
 
+  private bool is_pouring = false;
+
+  
   void OnEnable () {
     material = skin.materials[0];
   }
@@ -22,28 +25,52 @@ public class Mixer : MonoBehaviour {
 
     if (PlayerInteracter.Instance.grabbing &&
         PlayerInteracter.Instance.target.GetComponentInChildren<Bottle>() &&
-        Input.GetMouseButton(0) &&
         Physics.Raycast(PlayerInteracter.Instance.interactiveRay,
-                        out hit, 10, LayerMask.GetMask("mixer"))) {
-
-      Bottle bottle = PlayerInteracter.Instance.target
-        .GetComponentInChildren<Bottle>();
-
-      float delta = bottle.mixerFillSpeed * Time.deltaTime;
-      float value =
-        Mathf.Clamp(skin.GetBlendShapeWeight(0) - delta, 0, 100);
-
-      if (!content.ContainsKey(bottle.reagentData)) {
-        content[bottle.reagentData] = 0;
+          out hit, 10, LayerMask.GetMask("mixer")))
+    {
+      if (Input.GetMouseButtonDown(0))
+      {
+        Events.OnStartPouring();
+        is_pouring = true;
       }
+      else if (Input.GetMouseButton(0))
+      {
+        if (PlayerInteracter.Instance.grabbing &&
+            PlayerInteracter.Instance.target.GetComponentInChildren<Bottle>() &&
+            Physics.Raycast(PlayerInteracter.Instance.interactiveRay,
+              out hit, 10, LayerMask.GetMask("mixer")))
+        {
 
-      content[bottle.reagentData] += delta;
+          Bottle bottle = PlayerInteracter.Instance.target
+            .GetComponentInChildren<Bottle>();
 
-      skin.SetBlendShapeWeight(0, value);
+          float delta = bottle.mixerFillSpeed * Time.deltaTime;
+          float value =
+            Mathf.Clamp(skin.GetBlendShapeWeight(0) - delta, 0, 100);
 
-      material.color = new Color(0,0,0,0);
-      foreach (KeyValuePair<Reagent, float> entry in content) {
-        material.color += entry.Key.liquidColor * (entry.Value / (100 - value));
+          if (!content.ContainsKey(bottle.reagentData))
+          {
+            content[bottle.reagentData] = 0;
+          }
+
+          content[bottle.reagentData] += delta;
+
+          skin.SetBlendShapeWeight(0, value);
+
+          material.color = new Color(0, 0, 0, 0);
+          foreach (KeyValuePair<Reagent, float> entry in content)
+          {
+            material.color += entry.Key.liquidColor * (entry.Value / (100 - value));
+          }
+        }
+      }
+    }
+    if (Input.GetMouseButtonUp(0))
+    {
+      if (is_pouring)
+      {
+        is_pouring = false;
+        Events.OnEndPouring();
       }
     }
   }
@@ -82,4 +109,6 @@ public class Mixer : MonoBehaviour {
 
     return failed > 0.1f? 0: score;
   }
+  
+
 }
