@@ -11,8 +11,12 @@ public class Glass : MonoBehaviour {
   Material _liquidMaterial;
   Coroutine _fill;
 
+  void Awake () {
+    _liquidMaterial = liquid.materials[1];
+  }
+
   void OnEnable () {
-    _liquidMaterial = liquid.materials[0];
+    liquid.SetBlendShapeWeight(0,100);
   }
 
   void Start () {

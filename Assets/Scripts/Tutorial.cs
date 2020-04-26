@@ -23,9 +23,15 @@ public class Tutorial : MonoBehaviour {
     tutorialClient = clients.SpawnClient();
     tutorialClient.waiting_time = 20;
     tutorialClient.OnRequest += HandleRequest;
+    // TODO: finish the tutorial
+    tutorialClient.OnClientEnded += HandleClientEnd;
   }
 
   public void HandleRequest (Recipe requested) {
     // TODO
+  }
+
+  public void HandleClientEnd (int score) {
+    clients.enabled = true;
   }
 }
