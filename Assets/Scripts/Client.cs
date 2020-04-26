@@ -16,7 +16,8 @@ public class Client : MonoBehaviour
     }
 
     public UnityAction OnClientStandUp;
-    public UnityAction<int> OnClientEnded;  
+    public UnityAction<int> OnClientEnded;
+    public UnityAction<Recipe> OnRequest;
 
     public float walkin_time = 3;
     public float ordering_time = 3;
@@ -27,7 +28,7 @@ public class Client : MonoBehaviour
     private Vector3 origin;
     private Vector3 destination;
 
-    private Recipe order;
+    public Recipe order;
 
 
     private TextMeshPro text_globe;
@@ -49,6 +50,7 @@ public class Client : MonoBehaviour
     {
         order = GameManager.GetRandomDrink();
         text_globe.text = string.Format("Can I have a: {0} please?",order.NameOfDrink);
+        if (OnRequest != null) OnRequest(order);
     }
     public void ShoutOrder()
     {
