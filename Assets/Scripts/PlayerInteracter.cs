@@ -94,10 +94,7 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
 
   private void StartPouring()
   {
-    var forward = Camera.main.transform.forward;
-    forward.y = 0;
-    var new_rotation = selected.target.localRotation * Quaternion.AngleAxis(-45, forward);
-    selected.target.localRotation = Quaternion.identity;
+    var new_rotation = selected.target.localRotation * Quaternion.Euler(0,0,45); 
     StartCoroutine(AnimatePour(selected.target,new_rotation));
   }
 
@@ -107,6 +104,7 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
   }
   private IEnumerator AnimatePour(Transform origin, Quaternion end)
   {
+    yield return new WaitUntil(delegate { return !animating; });
     animating = true;
     var start_rotation = origin.localRotation;
     var end_rotation = end;

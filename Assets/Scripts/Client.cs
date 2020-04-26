@@ -24,6 +24,9 @@ public class Client : MonoBehaviour
     public float waiting_time = 15;
     public float walkout_time = 3;
 
+    [Header("Animation")] 
+    public AnimationCurve text_globe_curve;
+    public float text_globe_spawn_time= 0.25f;
     private ClientStates current_state;
     private Vector3 origin;
     private Vector3 destination;
@@ -33,6 +36,8 @@ public class Client : MonoBehaviour
 
 
     private TextMeshPro text_globe;
+    
+    
 
     private void Start()
     {
@@ -56,10 +61,29 @@ public class Client : MonoBehaviour
     public void ShoutOrder()
     {
         text_globe.enabled = true;
+        text_globe.transform.rotation = Quaternion.Euler(90, text_globe.transform.eulerAngles.y, transform.eulerAngles.z);
+        StartCoroutine(AnimateTextGlobe(Quaternion.identity));
     }
 
+    private IEnumerator AnimateTextGlobe(Quaternion goal_rotation)
+    {
+        var start_rotation = text_globe.transform.rotation;
+        float counter = 0;
+        while (counter < 1)
+        {
+            counter += Time.deltaTime/text_globe_spawn_time;
+            text_globe.transform.rotation = Quaternion.LerpUnclamped(start_rotation,goal_rotation, text_globe_curve.Evaluate(counter));
+            yield return null;
+        }
+    }
     private void ShutUp()
     {
+        StartCoroutine(ShutUpRoutine());
+    }
+
+    private IEnumerator ShutUpRoutine()
+    {
+        yield return StartCoroutine(AnimateTextGlobe(Quaternion.Euler(90, 0, 0)));
         text_globe.enabled = false;
     }
     private IEnumerator StartRoutine()
