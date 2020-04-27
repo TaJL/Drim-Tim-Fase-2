@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : NonPersistantSingleton<GameManager>
 {
   public static int score = 0;
+  public static int errors_counter = 0;
   public static Recipe[] all_recipes;
   public int recipesUnblocked = 5;
   // cuántos clientes debe atender antes de desbloquear las próximas 5 recetas
@@ -26,6 +27,7 @@ public class GameManager : NonPersistantSingleton<GameManager>
 
     private void Start()
     {
+      Events.OnAddMistake += AddMistake;
       // las recetas no se ordenaban correctamente xD
       // la lista quedaba { Recipe1, Recipe10, Recipe11, ... }
       // ésto ordena la lista de acuerdo al número que llevan al final.
@@ -48,6 +50,11 @@ public class GameManager : NonPersistantSingleton<GameManager>
         // }
     }
 
+    public void AddMistake(int amount)
+    {
+      errors_counter += amount;
+      //print(string.Format("Mistake count: {0}",errors_counter));
+    }
     public static Recipe GetRandomDrink()
     {
       Instance.recipesUnblocked =

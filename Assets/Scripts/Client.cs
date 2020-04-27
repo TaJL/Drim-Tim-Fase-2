@@ -48,6 +48,7 @@ public class Client : MonoBehaviour
     private Coroutine text_globe_coroutine;
     private Coroutine shutup_routine;
 
+    private bool received_order = false;
     private void Start()
     {
         text_globe = GetComponentInChildren<TextMeshPro>();
@@ -125,6 +126,8 @@ public class Client : MonoBehaviour
 
     private void End()
     {
+        Events.OnAddMistake(received_order ? 0 : order.reagents.Length);
+
         if(OnClientEnded != null)
             OnClientEnded(14);//TESTING VALUE
         if (onAnyClientEnded != null) onAnyClientEnded(this);
@@ -186,6 +189,7 @@ public class Client : MonoBehaviour
     }
     public void RateBeberage (bool wasOk, List<string> left_out = null )
     {
+        received_order = true;
         Invoke("WalkOut",ordering_time);
         if (wasOk)
         {
@@ -205,10 +209,13 @@ public class Client : MonoBehaviour
                     if (i < left_out.Count - 1)
                         text_globe.text += " ni ";
                 }
-
-            }else
+                Events.OnAddMistake(left_out.Count);
+            }
+            else
+            {
                 text_globe.text = "<color=red>¡Esto sabe horrible!</color>";
-            
+                Events.OnAddMistake(order.reagents.Length);
+            }
             ShoutOrder();
         }
         current_state = ClientStates.Walkout;
