@@ -21,7 +21,7 @@ public class Tutorial : MonoBehaviour {
   public void SendTutorialCustomer (TutorialConversation c) {
     TutorialConversationManager.onConversationEnd -= SendTutorialCustomer;
     tutorialClient = clients.SpawnClient();
-    tutorialClient.waiting_time = 30;
+    tutorialClient.waiting_time = 999999;
     tutorialClient.OnRequest += HandleRequest;
     // TODO: finish the tutorial
     tutorialClient.OnClientEnded += HandleClientEnd;

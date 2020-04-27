@@ -34,7 +34,6 @@ public class ClientsManager : MonoBehaviour
     {
         while (is_spawning)
         {
-            yield return new WaitForSeconds(spawn_delay);
             Seat random_seat = bar.GetRandomFreeSeat();
             if (random_seat != null)
             {
@@ -44,6 +43,7 @@ public class ClientsManager : MonoBehaviour
             {
                 pending_clients.Enqueue(null);
             }
+            yield return new WaitForSeconds(spawn_delay);
         }
     }
 

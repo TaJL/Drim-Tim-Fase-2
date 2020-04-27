@@ -43,7 +43,9 @@ public class GlassInteraction : MonoBehaviour {
     glass.onFilled -= TriggerEvaluation;
     Seat seat = GetComponentInParent<Bar>().GetSeatAt(this.seat.GetSiblingIndex());
     bool wasOk = Mixer.Instance.AccuracyComparation(seat.client.order);
-    seat.client.RateBeberage(wasOk);
+    
+    
+    seat.client.RateBeberage(wasOk, Mixer.Instance.WrongReagents(seat.client.order));
     score = wasOk? 100: 0;
     GameManager.score += (int) score;
   }

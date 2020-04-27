@@ -40,6 +40,10 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
         if (Input.GetMouseButtonDown(1) && !note.Zoommed) return;
         note.Toggle();
       }
+      else if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("Client")))
+      {
+        hit.collider.GetComponent<Client>().ShoutOrder();
+      }
     }
   }
 

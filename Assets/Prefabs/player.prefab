@@ -189,7 +189,7 @@ GameObject:
   m_Layer: 9
   m_Name: grab anchor
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6649642825353908257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: -0.4, z: 1.8}
+  m_LocalPosition: {x: 0.23, y: -0.4, z: 1.38}
   m_LocalScale: {x: 0.7134641, y: 0.7134641, z: 0.7134641}
   m_Children: []
   m_Father: {fileID: 6649642824981091683}

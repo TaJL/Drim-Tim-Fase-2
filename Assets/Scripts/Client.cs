@@ -39,8 +39,10 @@ public class Client : MonoBehaviour
 
 
     private TextMeshPro text_globe;
-    
-    
+
+    private Coroutine waiting_coroutine;
+    private Coroutine text_globe_coroutine;
+    private Coroutine shutup_routine;
 
     private void Start()
     {
@@ -58,14 +60,22 @@ public class Client : MonoBehaviour
     private void SelectDrink()
     {
         order = GameManager.GetRandomDrink();
-        text_globe.text = string.Format("Can I have a: {0} please?",order.NameOfDrink);
+        text_globe.text = string.Format("Can I have a: <color=#8888EE>{0}</color> please?",order.NameOfDrink);
         if (OnRequest != null) OnRequest(order);
     }
     public void ShoutOrder()
     {
-        text_globe.enabled = true;
-        text_globe.transform.rotation = Quaternion.Euler(90, text_globe.transform.eulerAngles.y, transform.eulerAngles.z);
-        StartCoroutine(AnimateTextGlobe(Quaternion.identity));
+        if (current_state == ClientStates.Ordering || current_state == ClientStates.Waiting)
+        {
+            text_globe.enabled = true;
+            text_globe.transform.rotation =
+                Quaternion.Euler(90, text_globe.transform.eulerAngles.y, transform.eulerAngles.z);
+            
+            if(text_globe_coroutine != null)
+                StopCoroutine(text_globe_coroutine);
+            text_globe_coroutine = StartCoroutine(AnimateTextGlobe(Quaternion.identity));
+            ShutUp();
+        }
     }
 
     private IEnumerator AnimateTextGlobe(Quaternion goal_rotation)
@@ -81,11 +91,14 @@ public class Client : MonoBehaviour
     }
     private void ShutUp()
     {
-        StartCoroutine(ShutUpRoutine());
+        if(shutup_routine != null)
+            StopCoroutine(shutup_routine);
+        shutup_routine = StartCoroutine(ShutUpRoutine());
     }
 
     private IEnumerator ShutUpRoutine()
     {
+        yield return new WaitForSeconds(ordering_time);
         yield return StartCoroutine(AnimateTextGlobe(Quaternion.Euler(90, 0, 0)));
         text_globe.enabled = false;
     }
@@ -99,12 +112,15 @@ public class Client : MonoBehaviour
         forward.y = 0;
         transform.forward = forward;
         yield return StartCoroutine(OrderRoutine());
-        yield return StartCoroutine(WaitingRoutine());
-        animator.SetBool("is walking", true);
-        transform.forward = destination - origin;
+        yield return waiting_coroutine = StartCoroutine(WaitingRoutine());
+
         yield return StartCoroutine(WalkOutRoutine());
         //CALCULATE SCORE HERE
         // print("client ended");
+    }
+
+    private void End()
+    {
         if(OnClientEnded != null)
             OnClientEnded(14);//TESTING VALUE
         if (onAnyClientEnded != null) onAnyClientEnded(this);
@@ -129,10 +145,10 @@ public class Client : MonoBehaviour
     {
         current_state = ClientStates.Ordering;
         SelectDrink();
-        ShoutOrder();
+        yield return null;
+        //ShoutOrder();
         // print("Can I have a: "+order.NameOfDrink);
-        yield return new WaitForSeconds(ordering_time);
-        ShutUp();
+        //yield return new WaitForSeconds(ordering_time);
     }
 
     private IEnumerator WaitingRoutine()
@@ -141,10 +157,17 @@ public class Client : MonoBehaviour
 
         yield return new WaitForSeconds(waiting_time);
     }
-
+    private void WalkOut()
+    {
+        if(waiting_coroutine!= null)
+            StopCoroutine(waiting_coroutine);
+        StartCoroutine(WalkOutRoutine());
+    }
     private IEnumerator WalkOutRoutine()
     {
         current_state = ClientStates.Walkout;
+        animator.SetBool("is walking", true);
+        transform.forward = destination - origin;
         if (OnClientStandUp != null)
             OnClientStandUp();
         var counter = 0.0f;
@@ -154,15 +177,33 @@ public class Client : MonoBehaviour
             transform.position = Vector3.Lerp(destination, origin, counter);
             yield return null;
         }
+        End();
     }
-
-    private int CalculateDrinkScore()
+    public void RateBeberage (bool wasOk, List<string> left_out = null )
     {
-        throw new NotImplementedException();
-    }
+        Invoke("WalkOut",ordering_time);
+        if (wasOk)
+        {
+            text_globe.text = string.Format("<color=green>Thanks it was delicious!</color>");
+            ShoutOrder();
+        }
+        else
+        {
+            if (left_out != null && left_out.Count > 0)
+            {
+                text_globe.text = string.Format("Hey, {0} doesn't contain ", order.NameOfDrink);
+                for (int i = 0; i < left_out.Count; i++)
+                {
+                    text_globe.text += string.Format("<color=red>{0}</color>",left_out[i]);
+                    if (i < left_out.Count - 1)
+                        text_globe.text += " and ";
+                }
 
-  public void RateBeberage (bool wasOk) {
-    this.wasOk = wasOk;
-    print(wasOk);
-  }
+            }else
+                text_globe.text = "<color=red>Hey this drink sucks!</color>";
+            
+            ShoutOrder();
+        }
+        current_state = ClientStates.Walkout;
+    }
 }

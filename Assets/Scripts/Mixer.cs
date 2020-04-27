@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Mixer : NonPersistantSingleton<Mixer> {
   public SkinnedMeshRenderer skin;
@@ -157,6 +158,24 @@ public class Mixer : NonPersistantSingleton<Mixer> {
     return true;
   }
 
+  public List<string> WrongReagents(Recipe wanted)
+  {
+    var wrong_reagents = new List<string>();
+    foreach (var current in simplifiedContent)
+    {
+      bool contains = false;
+      foreach (var reagent in wanted.reagents)
+      {
+        if (reagent.reagentName == current.Key)
+        {
+          contains = true;
+        }  
+      }
+      if(!contains)
+        wrong_reagents.Add(current.Key);
+    }
+    return wrong_reagents;
+  }
   public Recipe FindCoincidence (float errorAllowedPerReagentRequired = -1) {
     if (errorAllowedPerReagentRequired < 0) {
       errorAllowedPerReagentRequired = defaultErrorAllowed;
