@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfDrink: White Russian
   reagents:
-  - reagentName: Ginebra
+  - reagentName: Sirope
     amount: 2
   - reagentName: Vodka
     amount: 3

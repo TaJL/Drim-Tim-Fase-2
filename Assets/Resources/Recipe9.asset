@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfDrink: "T\xE9 Long Island"
   reagents:
-  - reagentName: Ginebra
+  - reagentName: "Co\xF1ac"
     amount: 2
   - reagentName: Sirope
     amount: 2

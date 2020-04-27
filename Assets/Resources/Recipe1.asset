@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfDrink: Martini
   reagents:
-  - reagentName: Ginebra
+  - reagentName: "Co\xF1ac"
     amount: 3
   - reagentName: Vino
     amount: 2
