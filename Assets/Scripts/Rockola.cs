@@ -74,4 +74,15 @@ public class Rockola : MonoBehaviour
         yield return new WaitUntil(delegate { return !audio_source.isPlaying; });
         PlayNext();
     }
+
+  public void TogglePower () {
+    StopAllCoroutines();
+    if (audio_source.isPlaying) {
+      audio_source.Stop();
+      screen_text.text = "";
+    } else {
+      audio_source.Play();
+      PlayClip(current_playing);
+    }
+  }
 }

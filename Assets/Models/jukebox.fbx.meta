@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 3ee02942d41fa1d4cb73598f04e39888
+guid: e7844858788aca34791cefd0c3074b14
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jukebox
+    second: {fileID: 2100000, guid: fbdd5382d32389142ba0270ef66f99e5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -44,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -54,10 +59,10 @@ ModelImporter:
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
     indexFormat: 0
-    secondaryUVAngleDistortion: 1
-    secondaryUVAreaDistortion: 1
-    secondaryUVHardAngle: 90
-    secondaryUVPackMargin: 26
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
