@@ -8,6 +8,7 @@ public class Note : MonoBehaviour
 {
     [SerializeField]
     private TextMeshPro text_mesh;
+  public bool Zoommed { get => zoommed; }
     private bool zoommed = false;
     private Vector3 start_position;
     private Quaternion start_rotation;

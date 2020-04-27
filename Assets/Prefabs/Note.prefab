@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3671539240074658423}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.00036607, y: 0.43676, z: 0}
+  m_LocalPosition: {x: 0.00036607, y: 0.509, z: 0}
   m_LocalScale: {x: 5.959, y: 5.959, z: 5.959}
   m_Children: []
   m_Father: {fileID: 4105110357191360063}
@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.033}
+  m_AnchoredPosition: {x: 0, y: 0.003000021}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4105110356826427749
@@ -191,16 +191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Ronroneo de cocodrilo</b>
-
-    1x Ron
-
-    2x Soda
-
-    2x Zumo
-
-    2x
-    Zumo'
+  m_text: "<b>Martini</b>\n3x Co\xF1ac\n2x Vino\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -228,7 +219,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 1.45
+  m_fontSize: 2.35
   m_fontSizeBase: 1.03
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -269,12 +260,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4105110356826427752}
-    characterCount: 52
+    characterCount: 25
     spriteCount: 0
-    spaceCount: 10
-    wordCount: 11
+    spaceCount: 5
+    wordCount: 5
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -303,6 +294,7 @@ GameObject:
   - component: {fileID: 4105110357191360063}
   - component: {fileID: 4105110357191360003}
   - component: {fileID: 4105110357191360062}
+  - component: {fileID: 2862108292224222406}
   m_Layer: 12
   m_Name: Note
   m_TagString: Untagged
@@ -318,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4105110357191360000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -6.289}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4105110356826427753}
@@ -352,3 +344,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.07}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2862108292224222406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105110357191360000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58656973df44ff41942332ce7ed1cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 7f277c6b435726c449baae73895eecfb, type: 2}
+  label: {fileID: 4105110356826427752}

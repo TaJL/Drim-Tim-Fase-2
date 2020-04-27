@@ -28,7 +28,7 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
     UpdateSelected();
     UpdateGrab();
     //NOTES
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
     {
       RaycastHit hit;
       Ray ray =
@@ -36,7 +36,9 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
 
       if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("Note")))
       {
-        hit.collider.GetComponent<Note>().Toggle();
+        Note note = hit.collider.GetComponent<Note>();
+        if (Input.GetMouseButtonDown(1) && !note.Zoommed) return;
+        note.Toggle();
       }
     }
   }
