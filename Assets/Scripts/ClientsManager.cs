@@ -9,6 +9,10 @@ public class ClientsManager : MonoBehaviour
     public GameObject client_prefab;
 
     public float spawn_delay = 4f;
+
+    [SerializeField] private float spawn_reduction = 0.5f;
+
+    [SerializeField] private float spawn_delay_min = 10f;
     
     private bool is_spawning = false;
 
@@ -82,5 +86,21 @@ public class ClientsManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ReduceSpawnTime()
+    {
+      if (spawn_delay_min <= spawn_delay)
+      {
+        return;
+      }
+
+      spawn_delay -= spawn_reduction;
+
+      if (spawn_delay < spawn_delay_min)
+      {
+        spawn_delay = spawn_delay_min;
+      }
+      
     }
 }
