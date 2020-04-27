@@ -42,7 +42,7 @@ public class GlassInteraction : MonoBehaviour {
   public void TriggerEvaluation () {
     glass.onFilled -= TriggerEvaluation;
     Seat seat = GetComponentInParent<Bar>().GetSeatAt(this.seat.GetSiblingIndex());
-    score = Mixer.Instance.Evaluate(seat.client.order);
+    score = Mixer.Instance.FindCoincidence() == seat.client.order? 100: 0;
     GameManager.score += (int) score;
   }
 

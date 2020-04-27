@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : NonPersistantSingleton<GameManager>
 {
   public static int score = 0;
-    private static Recipe[] all_recipes;
+  public static Recipe[] all_recipes;
     private void Start()
     {
         all_recipes = Resources.LoadAll<Recipe>("");
