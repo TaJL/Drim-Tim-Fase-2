@@ -9,4 +9,5 @@ public class Events
     public static UnityAction<int> OnAddMistake;
     //UI
     //public static UnityAction 
+    public static UnityAction<float> OnUIUpdateRating;
 }

@@ -53,7 +53,7 @@ public class GameManager : NonPersistantSingleton<GameManager>
     public void AddMistake(int amount)
     {
       errors_counter += amount;
-      //print(string.Format("Mistake count: {0}",errors_counter));
+      Events.OnUIUpdateRating(1.0f-(errors_counter / 10.0f));
     }
     public static Recipe GetRandomDrink()
     {
