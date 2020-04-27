@@ -8,8 +8,9 @@ public class Rockola : MonoBehaviour
 {
     public AudioClip[] clips;
     private int current_playing = 0;
-    private AudioSource audio_source;
-    private TextMeshPro screen_text;
+    public AudioSource audio_source;
+    public TextMeshPro screen_text;
+  public Light light;
 
     private Coroutine wait_routine;
     // Start is called before the first frame update
@@ -78,11 +79,15 @@ public class Rockola : MonoBehaviour
   public void TogglePower () {
     StopAllCoroutines();
     if (audio_source.isPlaying) {
+      this.enabled = false;
       audio_source.Stop();
       screen_text.text = "";
     } else {
+      this.enabled = true;
       audio_source.Play();
       PlayClip(current_playing);
     }
+
+    light.enabled = this.enabled;
   }
 }

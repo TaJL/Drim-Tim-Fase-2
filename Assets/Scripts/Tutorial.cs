@@ -7,6 +7,8 @@ public class Tutorial : MonoBehaviour {
   public Client tutorialClient;
   public TutorialConversationManager manager;
   public TutorialConversation conversation;
+  public TutorialConversation onClientRequest;
+  public PowerButton rockola;
 
   void Awake () {
     clients.enabled = false;
@@ -15,23 +17,28 @@ public class Tutorial : MonoBehaviour {
   IEnumerator Start () {
     yield return new WaitForSeconds(2);
     manager.Display(conversation);
-    TutorialConversationManager.onConversationEnd += SendTutorialCustomer;
+    rockola.onPressed += SendTutorialCustomer;
   }
 
-  public void SendTutorialCustomer (TutorialConversation c) {
-    TutorialConversationManager.onConversationEnd -= SendTutorialCustomer;
+  public void SendTutorialCustomer () {
+    rockola.onPressed -= SendTutorialCustomer;
     tutorialClient = clients.SpawnClient();
     tutorialClient.waiting_time = 999999;
+
     tutorialClient.OnRequest += HandleRequest;
-    // TODO: finish the tutorial
     tutorialClient.OnClientEnded += HandleClientEnd;
   }
 
   public void HandleRequest (Recipe requested) {
-    // TODO
+    StartCoroutine(_TriggerClientTutorial());
   }
 
   public void HandleClientEnd (int score) {
     clients.enabled = true;
+  }
+
+  IEnumerator _TriggerClientTutorial () {
+    yield return new WaitForSeconds(2);
+    manager.Display(onClientRequest);
   }
 }

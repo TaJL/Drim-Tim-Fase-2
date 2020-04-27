@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PowerButton : MonoBehaviour {
+  public event System.Action onPressed;
+
   void Update () {
     RaycastHit hit;
     if (Input.GetMouseButtonDown(0) &&
@@ -11,7 +13,7 @@ public class PowerButton : MonoBehaviour {
         hit.collider.GetComponent<PowerButton>() == this) {
       Rockola rockola = GetComponentInParent<Rockola>();
       rockola.TogglePower();
-      rockola.enabled = false;
+      if (onPressed != null) onPressed();
     }
   }
 }
