@@ -7,6 +7,8 @@ using  UnityEngine.Events;
 
 public class Client : MonoBehaviour
 {
+  public static event System.Action<Client> onAnyClientEnded;
+
     public enum  ClientStates
     {
         WalkIn,
@@ -15,13 +17,14 @@ public class Client : MonoBehaviour
         Walkout
     }
 
+  public bool wasOk;
     public UnityAction OnClientStandUp;
     public UnityAction<int> OnClientEnded;
     public UnityAction<Recipe> OnRequest;
 
     public float walkin_time = 3;
     public float ordering_time = 3;
-    public float waiting_time = 15;
+  public float waiting_time = 22;
     public float walkout_time = 3;
 
     [Header("Animation")] 
@@ -104,6 +107,7 @@ public class Client : MonoBehaviour
         // print("client ended");
         if(OnClientEnded != null)
             OnClientEnded(14);//TESTING VALUE
+        if (onAnyClientEnded != null) onAnyClientEnded(this);
 
         Destroy(this.gameObject);
     }
@@ -158,6 +162,7 @@ public class Client : MonoBehaviour
     }
 
   public void RateBeberage (bool wasOk) {
+    this.wasOk = wasOk;
     print(wasOk);
   }
 }
