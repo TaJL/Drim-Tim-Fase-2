@@ -156,4 +156,8 @@ public class Client : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+
+  public void RateBeberage (bool wasOk) {
+    print(wasOk);
+  }
 }

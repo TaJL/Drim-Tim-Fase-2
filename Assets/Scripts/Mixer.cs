@@ -131,8 +131,8 @@ public class Mixer : NonPersistantSingleton<Mixer> {
     return failed > 0.1f? 0: ((score / order.reagents.Length) * 100);
   }
 
-  public bool AccuracyComparation (Recipe recipe, float errorAllowedPerReagentRequired) {
-    float e = errorAllowedPerReagentRequired;
+  public bool AccuracyComparation (Recipe recipe, float errorAllowedPerReagentRequired = -1) {
+    float e = errorAllowedPerReagentRequired < 0? defaultErrorAllowed: errorAllowedPerReagentRequired;
     foreach (RequiredReagent required in recipe.reagents) {
       if (!simplifiedContent.ContainsKey(required.reagentName)) {
         return false;

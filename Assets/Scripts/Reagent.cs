@@ -6,4 +6,5 @@ using System.Collections.Generic;
 public class Reagent {
   public Color liquidColor = new Color(1,1,1,1);
   public string reagentName;
+  public float drunknessPerUnit;
 }

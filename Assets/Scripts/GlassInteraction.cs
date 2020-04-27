@@ -34,15 +34,17 @@ public class GlassInteraction : MonoBehaviour {
       if (!mixer) return;
 
       TriggerEvaluation();
-      mixer.Empty();
       glass.FillWith(mixer.material.color);
+      mixer.Empty();
     }
   }
 
   public void TriggerEvaluation () {
     glass.onFilled -= TriggerEvaluation;
     Seat seat = GetComponentInParent<Bar>().GetSeatAt(this.seat.GetSiblingIndex());
-    score = Mixer.Instance.FindCoincidence() == seat.client.order? 100: 0;
+    bool wasOk = Mixer.Instance.AccuracyComparation(seat.client.order);
+    seat.client.RateBeberage(wasOk);
+    score = wasOk? 100: 0;
     GameManager.score += (int) score;
   }
 
