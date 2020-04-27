@@ -86,12 +86,12 @@ public class Client : MonoBehaviour
 
     private IEnumerator AnimateTextGlobe(Quaternion goal_rotation)
     {
-        var start_rotation = text_globe.transform.rotation;
+        var start_rotation = text_globe.transform.localRotation;
         float counter = 0;
         while (counter < 1)
         {
             counter += Time.deltaTime/text_globe_spawn_time;
-            text_globe.transform.rotation = Quaternion.LerpUnclamped(start_rotation,goal_rotation, text_globe_curve.Evaluate(counter));
+            text_globe.transform.localRotation = Quaternion.LerpUnclamped(start_rotation,goal_rotation, text_globe_curve.Evaluate(counter));
             yield return null;
         }
     }
