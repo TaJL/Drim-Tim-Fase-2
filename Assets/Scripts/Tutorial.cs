@@ -21,7 +21,11 @@ public class Tutorial : MonoBehaviour {
   }
 
   public void SendTutorialCustomer () {
+    StartCoroutine(_SendTutorialCustomer());
+  }
+  IEnumerator _SendTutorialCustomer () {
     rockola.onPressed -= SendTutorialCustomer;
+    yield return new WaitForSeconds(1);
     tutorialClient = clients.SpawnClient();
     tutorialClient.waiting_time = 999999;
 
@@ -32,13 +36,12 @@ public class Tutorial : MonoBehaviour {
   public void HandleRequest (Recipe requested) {
     StartCoroutine(_TriggerClientTutorial());
   }
-
-  public void HandleClientEnd (int score) {
-    clients.enabled = true;
-  }
-
   IEnumerator _TriggerClientTutorial () {
     yield return new WaitForSeconds(2);
     manager.Display(onClientRequest);
+  }
+
+  public void HandleClientEnd (int score) {
+    clients.enabled = true;
   }
 }

@@ -75,6 +75,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5b7e6e49acf25c4449d19f06cda7c2bc, type: 2}
   - {fileID: 2100000, guid: 07548f091d5a8dc47ae03e8994777649, type: 2}
   r: {fileID: 4353599174652118323}
+  heightRange: {x: 0.95, y: 1.2}
+  randomizable: 040000000500000006000000
 --- !u!1001 &2225007614675601357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +163,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489302850876048126, guid: 8a1da70b42b364045b1ceb32e6aa3149,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489302850876048126, guid: 8a1da70b42b364045b1ceb32e6aa3149,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710812494093359064, guid: 8a1da70b42b364045b1ceb32e6aa3149,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.03648334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710812494093359064, guid: 8a1da70b42b364045b1ceb32e6aa3149,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0051004863
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1da70b42b364045b1ceb32e6aa3149, type: 3}

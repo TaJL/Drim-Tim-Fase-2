@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3150221710691776641}
   - component: {fileID: 2392126847643289844}
   - component: {fileID: 9010655070926446735}
+  - component: {fileID: 2987720688093156654}
   m_Layer: 13
   m_Name: Client
   m_TagString: Untagged
@@ -117,6 +118,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.5, z: 0.5}
   m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!114 &2987720688093156654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88431383541571135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a07c0182a655ce4ba19094fee4599b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2241515268881084286
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353599174652118323, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
         type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353599174652118323, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5f80c1646705202418a9b2fc26bf0643, type: 2}
@@ -438,6 +456,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[5]
       value: 
       objectReference: {fileID: 2100000, guid: 07548f091d5a8dc47ae03e8994777649, type: 2}
+    - target: {fileID: 4353599174652118323, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353599174652118323, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353599174652118323, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6600698625576070359, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -458,6 +491,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.073
       objectReference: {fileID: 0}
+    - target: {fileID: 6646506066300290194, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b,
+        type: 3}
+      propertyPath: client
+      value: 
+      objectReference: {fileID: 3150221710691776641}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e5c90cc8a0fc34f8222ec9cfcf0c9b, type: 3}
 --- !u!4 &123444009786509725 stripped

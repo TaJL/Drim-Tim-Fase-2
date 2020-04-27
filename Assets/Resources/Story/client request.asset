@@ -18,3 +18,7 @@ MonoBehaviour:
     author: 1
   - message: clic sobre las botellas para agarrarlas y clic derecho para soltarlas
     author: 1
+  - message: con una botella seleccionada, clic en el mixer para crear una bebida
+    author: 1
+  - message: puedes poner cuantas bebidas quieras
+    author: 1

@@ -8,6 +8,10 @@ using  UnityEngine.Events;
 public class Client : MonoBehaviour
 {
   public static event System.Action<Client> onAnyClientEnded;
+  public event System.Action onPleased;
+  public event System.Action onDisappointed;
+  public event System.Action onStartTalking;
+  public event System.Action onStopTalking;
 
     public enum  ClientStates
     {
@@ -71,8 +75,10 @@ public class Client : MonoBehaviour
             text_globe.transform.rotation =
                 Quaternion.Euler(90, text_globe.transform.eulerAngles.y, transform.eulerAngles.z);
             
-            if(text_globe_coroutine != null)
+            if(text_globe_coroutine != null) {
                 StopCoroutine(text_globe_coroutine);
+            }
+            if (onStartTalking != null) onStartTalking();
             text_globe_coroutine = StartCoroutine(AnimateTextGlobe(Quaternion.identity));
             ShutUp();
         }
@@ -101,16 +107,14 @@ public class Client : MonoBehaviour
         yield return new WaitForSeconds(ordering_time);
         yield return StartCoroutine(AnimateTextGlobe(Quaternion.Euler(90, 0, 0)));
         text_globe.enabled = false;
+        if (onStopTalking != null) onStopTalking();
     }
     private IEnumerator StartRoutine()
     {
         animator.SetBool("is walking", true);
         yield return StartCoroutine(WalkInRoutine());
         animator.SetBool("is walking", false);
-        Vector3 forward = transform.position -
-          PlayerInteracter.Instance.transform.position;
-        forward.y = 0;
-        transform.forward = forward;
+        GetComponent<LookAtPlayer>().enabled = true;
         yield return StartCoroutine(OrderRoutine());
         yield return waiting_coroutine = StartCoroutine(WaitingRoutine());
 
@@ -166,6 +170,7 @@ public class Client : MonoBehaviour
     private IEnumerator WalkOutRoutine()
     {
         current_state = ClientStates.Walkout;
+        GetComponent<LookAtPlayer>().enabled = false;
         animator.SetBool("is walking", true);
         transform.forward = destination - origin;
         if (OnClientStandUp != null)
@@ -184,11 +189,13 @@ public class Client : MonoBehaviour
         Invoke("WalkOut",ordering_time);
         if (wasOk)
         {
+          if (onPleased != null) onPleased();
             text_globe.text = string.Format("<color=green>Thanks it was delicious!</color>");
             ShoutOrder();
         }
         else
         {
+          if (onDisappointed != null) onDisappointed();
             if (left_out != null && left_out.Count > 0)
             {
                 text_globe.text = string.Format("Hey, {0} doesn't contain ", order.NameOfDrink);
