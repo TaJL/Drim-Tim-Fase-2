@@ -13,20 +13,17 @@ MonoBehaviour:
   m_Name: 01 tutorial
   m_EditorClassIdentifier: 
   entries:
-  - message: "Bienvenido a Bartender\xEDa 101\n\nPresion\xE1 ESPACIO para ver el
-      siguiente mensaje"
+  - message: 'Controles: WASD para moverte y ESPACIO para saltar.'
     author: 1
-  - message: "\xA1Wow! \xA1\xE9sto es demasiado realista como para ser una simulaci\xF3n!"
-    author: 0
-  - message: "\xA1JAJAJAJA! \xBFSimulaci\xF3n? \xBFEn una universidad p\xFAblica?
-      es TAAN realista porque es REAL"
+  - message: "\xA1Por el amor a todo lo que embriaga! \xBFEn serio creiste que te
+      dejaria saltar cerca de las botellas?"
     author: 1
-  - message: "\xA1Pero yo no s\xE9 atender un bar! \xBFNo pod\xE9s ense\xF1arme en
-      una clase?"
-    author: 0
-  - message: "\xA1NO POD\xC9S VERLO TODO EN CLASES! ten\xE9s que aprender trabajando
-      de gratis para nosotros! digo! haciendo pr\xE1cticas laborales"
+  - message: Te contrate para remplazar al chico que no quiso darle otro trago a
+      ese musculoso de mas de dos metros
     author: 1
-  - message: "\xA1All\xED viene tu primer cliente por la puerta detr\xE1s de t\xED!
-      atend\xE9lo bien o te repruebo"
+  - message: Por ahora te estare guiando en lo escencial. Puedes llamarme Gertrudis,
+      pero solo cuando te deje hablar
+    author: 1
+  - message: "Pon algo de musica cari\xF1o, asi la gente podra distraerse de tu cara
+      cuando entre a comprar."
     author: 1
