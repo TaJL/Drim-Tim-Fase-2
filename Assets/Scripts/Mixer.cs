@@ -4,10 +4,17 @@ using System.Collections.Generic;
 
 public class Mixer : NonPersistantSingleton<Mixer> {
   public SkinnedMeshRenderer skin;
+
   public Dictionary<Reagent, float> content =
-    new Dictionary<Reagent, float>();
+    new Dictionary<Reagent, float>(); // en "total del frasco"
+  // el total del frasco es 100.
+  // cada Reagent ocupa un porcentaje de éste 100.
+  public Dictionary<string, float> simplifiedContent =
+    new Dictionary<string, float>();
+
   public Material material;
   public Recipe test;
+  public float defaultErrorAllowed = 0.5f; // en "unidades de medida" (va de 1 a 5)
 
   private bool is_pouring = false;
 
@@ -17,7 +24,12 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   }
 
   void Update () {
+
     RaycastHit hit;
+
+    if (Input.GetKeyDown(KeyCode.P)) {
+      print(FindCoincidence().NameOfDrink);
+    }
 
     if (PlayerInteracter.Instance.grabbing &&
         PlayerInteracter.Instance.target.GetComponentInChildren<Bottle>() &&
@@ -41,17 +53,17 @@ public class Mixer : NonPersistantSingleton<Mixer> {
             .GetComponentInChildren<Bottle>();
 
           float delta = bottle.mixerFillSpeed * Time.deltaTime;
-          float value =
-            Mathf.Clamp(skin.GetBlendShapeWeight(0) - delta, 0, 100);
+          float value = skin.GetBlendShapeWeight(0) - delta;
 
           if (!content.ContainsKey(bottle.reagentData))
           {
             content[bottle.reagentData] = 0;
           }
 
-          content[bottle.reagentData] += delta;
+          content[bottle.reagentData] += delta + (value < 0? value: 0);
+          simplifiedContent[bottle.reagentData.reagentName] = content[bottle.reagentData];
 
-          skin.SetBlendShapeWeight(0, value);
+          skin.SetBlendShapeWeight(0, Mathf.Clamp(value, 0, 100));
 
           material.color = new Color(0, 0, 0, 0);
           foreach (KeyValuePair<Reagent, float> entry in content)
@@ -72,6 +84,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   }
 
   public void Empty () {
+    simplifiedContent.Clear();
     content.Clear();
     skin.SetBlendShapeWeight(0,100);
     material.color = new Color(1,1,1,1);
@@ -118,5 +131,41 @@ public class Mixer : NonPersistantSingleton<Mixer> {
     return failed > 0.1f? 0: ((score / order.reagents.Length) * 100);
   }
 
+  public bool AccuracyComparation (Recipe recipe, float errorAllowedPerReagentRequired) {
+    float e = errorAllowedPerReagentRequired;
+    foreach (RequiredReagent required in recipe.reagents) {
+      if (!simplifiedContent.ContainsKey(required.reagentName)) {
+        return false;
+      }
+    }
 
+    foreach (KeyValuePair<string, float> entry in simplifiedContent) {
+      bool found = false;
+      foreach (RequiredReagent required in recipe.reagents) {
+        if (required.reagentName == entry.Key) {
+          found = true;
+          if (Mathf.Abs(required.amount - entry.Value / 20f) > e) {
+            return false;
+          }
+          break;
+        }
+      }
+
+      if (!found && entry.Value > errorAllowedPerReagentRequired) return false;
+    }
+
+    return true;
+  }
+
+  public Recipe FindCoincidence (float errorAllowedPerReagentRequired = -1) {
+    if (errorAllowedPerReagentRequired < 0) {
+      errorAllowedPerReagentRequired = defaultErrorAllowed;
+    }
+
+    foreach (Recipe r in GameManager.all_recipes) {
+      if (AccuracyComparation(r, errorAllowedPerReagentRequired)) return r;
+    }
+
+    return new Recipe();
+  }
 }
