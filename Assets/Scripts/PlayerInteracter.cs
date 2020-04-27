@@ -27,6 +27,18 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
 
     UpdateSelected();
     UpdateGrab();
+    //NOTES
+    if (Input.GetMouseButtonDown(0))
+    {
+      RaycastHit hit;
+      Ray ray =
+        Camera.main.ScreenPointToRay(Input.mousePosition);
+
+      if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("Note")))
+      {
+        hit.collider.GetComponent<Note>().Toggle();
+      }
+    }
   }
 
   void UpdateGrab () {

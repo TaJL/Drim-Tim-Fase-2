@@ -24,6 +24,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   }
 
   void Update () {
+
     RaycastHit hit;
 
     if (Input.GetKeyDown(KeyCode.P)) {
