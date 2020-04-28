@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -158,7 +158,13 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: "<b>Pi\xF1a Colada</b>\n2x Ron\n3x Zumo\n"
+      value: '<b>White Russian</b>
+
+        2x Sirope
+
+        3x Vodka
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -267,6 +273,149 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f005f7eda3ec245b6c9d07e612c8df, type: 3}
+--- !u!1 &23626921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23626924}
+  - component: {fileID: 23626923}
+  - component: {fileID: 23626922}
+  m_Layer: 0
+  m_Name: s_amb_bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &23626922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23626921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446c28bd8bfbea744834854815d322b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientsInBar: 0
+  speaker: {fileID: 23626923}
+  target: 0
+--- !u!82 &23626923
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23626921}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ebd053ac672df7d40b3c394a726c9fb4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &23626924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23626921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &102957861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,7 +787,15 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: "<b>Martina</b>\n2x Co\xF1ac\n1x Soda\n2x Vino\n"
+      value: '<b>Mosquito</b>
+
+        2x Ron
+
+        1x Soda
+
+        2x Vodka
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -832,7 +989,15 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: "<b>Ronroneo de cocodrilo</b>\n3x Co\xF1ac\n1x Fernet\n1x Sirope\n"
+      value: '<b>Venlot</b>
+
+        1x Soda
+
+        1x Ron
+
+        3x Triple Seco
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -1201,7 +1366,106 @@ MonoBehaviour:
   focusedLight: {fileID: 7744425660256511126}
   unfocusedLight: {fileID: 7744425660256511125}
   target: {fileID: 1138307427}
+  speaker: {fileID: 577066587}
+  take: {fileID: 8300000, guid: 20d5f3e4bac2387438f4b4eb13f8fbee, type: 3}
+  drop: {fileID: 8300000, guid: 2a75ef86ab66958458f5f532efa7709e, type: 3}
   _slot: {fileID: 0}
+--- !u!82 &577066587
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577066581}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &617774653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1268,6 +1532,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rockola
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930268228376031382, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: click
+      value: 
+      objectReference: {fileID: 8300000, guid: 27165fe077f68194382aba77ddd40602, type: 3}
+    - target: {fileID: 1930268228376031383, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1930268228774925546, guid: b34ff32820cc0ca428e6367232153604,
         type: 3}
@@ -1582,11 +1856,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Fernet con Coca</b>
+      value: '<b>Coca con Fernet</b>
 
-        1x Fernet
+        4x Fernet
 
-        4x Gaseosa
+        1x Gaseosa
 
 '
       objectReference: {fileID: 0}
@@ -1733,13 +2007,7 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Daiquiri</b>
-
-        3x Ron
-
-        2x Zumo
-
-'
+      value: "<b>Pi\xF1a Colada</b>\n2x Ron\n3x Zumo\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -1904,15 +2172,7 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Venlot</b>
-
-        1x Soda
-
-        1x Ron
-
-        3x Triple Seco
-
-'
+      value: "<b>Martini Fuerte</b>\n2x Co\xF1ac\n1x Vino\n2x Tequila\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -2134,13 +2394,9 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Maotai</b>
+      value: '<b>Madre Rusia</b>
 
-        2x Soda
-
-        2x Vodka
-
-        1x Whisky
+        5x Vodka
 
 '
       objectReference: {fileID: 0}
@@ -2825,9 +3081,14 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Tequila</b>
+      value: '<b>Mojito con Manaos</b>
 
-        5x Tequila
+        2x Fernet
+
+        2x Zumo
+
+        1x
+        Sirope
 
 '
       objectReference: {fileID: 0}
@@ -3060,9 +3321,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Madre Rusia</b>
+      value: '<b>El Macho</b>
 
-        5x Vodka
+        4x Tequila
+
+        1x Fernet
 
 '
       objectReference: {fileID: 0}
@@ -3482,13 +3745,13 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Mosquito</b>
+      value: '<b>Maotai</b>
 
-        2x Ron
-
-        1x Soda
+        2x Soda
 
         2x Vodka
+
+        1x Whisky
 
 '
       objectReference: {fileID: 0}
@@ -3872,13 +4135,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Mai Tai</b>
+      value: '<b>Caipirinha</b>
 
         1x Ron
 
-        2x Sirope
-
-        2x Zumo
+        4x Zumo
 
 '
       objectReference: {fileID: 0}
@@ -4025,11 +4286,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Finamente Gasificada</b>
+      value: '<b>Cosmopolitician</b>
 
-        1x Soda
+        3x Triple Seco
 
-        4x Zumo
+        2x Vodka
 
 '
       objectReference: {fileID: 0}
@@ -4295,7 +4556,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: "<b>Martini Fuerte</b>\n2x Co\xF1ac\n1x Vino\n2x Tequila\n"
+      value: '<b>Tequila</b>
+
+        5x Tequila
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -4487,7 +4752,7 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: "<b>Pi\xF1a Colada</b>\n2x Ron\n3x Zumo\n"
+      value: "<b>T\xE9 Long Island</b>\n2x Co\xF1ac\n2x Sirope\n1x Ron\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -4764,11 +5029,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Caipirinha</b>
+      value: '<b>Daiquiri</b>
 
-        1x Ron
+        3x Ron
 
-        4x Zumo
+        2x Zumo
 
 '
       objectReference: {fileID: 0}
@@ -4915,13 +5180,7 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>White Russian</b>
-
-        2x Sirope
-
-        3x Vodka
-
-'
+      value: "<b>Martina</b>\n2x Co\xF1ac\n1x Soda\n2x Vino\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -5309,13 +5568,7 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>El Macho</b>
-
-        4x Tequila
-
-        1x Fernet
-
-'
+      value: "<b>Ronroneo de cocodrilo</b>\n3x Co\xF1ac\n1x Fernet\n1x Sirope\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -5460,13 +5713,11 @@ PrefabInstance:
     - target: {fileID: 4105110356826427752, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_text
-      value: '<b>Manaos</b>
-
-        3x Fernet
+      value: '<b>Finamente Gasificada</b>
 
         1x Soda
 
-        1x Zumo
+        4x Zumo
 
 '
       objectReference: {fileID: 0}
@@ -6575,7 +6826,8 @@ PrefabInstance:
       propertyPath: reagentData.liquidColor.b
       value: 0.4481132
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 457500023627902183, guid: 33ba8fb53260f9c4b9c30f0182638a5e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33ba8fb53260f9c4b9c30f0182638a5e, type: 3}
 --- !u!108 &7744425660256511125 stripped
 Light:

@@ -6,6 +6,7 @@ using System.Linq;
 public class Mixer : NonPersistantSingleton<Mixer> {
   public SkinnedMeshRenderer skin;
 
+  public float LiquidAmount { get => (100 - skin.GetBlendShapeWeight(0)) / 20f; }
   public Dictionary<Reagent, float> content =
     new Dictionary<Reagent, float>(); // en "total del frasco"
   // el total del frasco es 100.
@@ -16,6 +17,7 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   public Material material;
   public Recipe test;
   public float defaultErrorAllowed = 0.5f; // en "unidades de medida" (va de 1 a 5)
+  public FillSound pouring;
 
   private bool is_pouring = false;
 
@@ -25,12 +27,9 @@ public class Mixer : NonPersistantSingleton<Mixer> {
   }
 
   void Update () {
-
     RaycastHit hit;
 
-    if (Input.GetKeyDown(KeyCode.P)) {
-      print(FindCoincidence().NameOfDrink);
-    }
+    pouring.targetVolume = is_pouring? 1: 0;
 
     if (PlayerInteracter.Instance.grabbing &&
         PlayerInteracter.Instance.target.GetComponentInChildren<Bottle>() &&

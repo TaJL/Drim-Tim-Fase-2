@@ -52,6 +52,7 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
 
     if (Input.GetMouseButtonDown(0) && !grabbing) {
       selected.target.SetParent(target);
+      selected.Take();
       //Util.Reset(selected.target);
       StartCoroutine(AnimateTo(selected.target,target.localPosition));
       grabbing = true;
