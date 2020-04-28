@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01 tutorial
   m_EditorClassIdentifier: 
   entries:
-  - message: 'Controles: WASD para moverte y ESPACIO para saltar.'
+  - message: 'Controles: WASD para moverte y ESPACIO para saltar'
     author: 1
   - message: "\xA1Por el amor a todo lo que embriaga! \xBFEn serio creiste que te
       dejaria saltar cerca de las botellas?"
@@ -21,9 +21,11 @@ MonoBehaviour:
   - message: Te contrate para remplazar al chico que no quiso darle otro trago a
       ese musculoso de mas de dos metros
     author: 1
-  - message: Por ahora te estare guiando en lo escencial. Puedes llamarme Gertrudis,
-      pero solo cuando te deje hablar
+  - message: 'Por ahora te estare guiando en lo escencial
+
+      Puedes llamarme
+      Gertrudis'
     author: 1
   - message: "Pon algo de musica cari\xF1o, asi la gente podra distraerse de tu cara
-      cuando entre a comprar."
+      cuando entre a comprar"
     author: 1

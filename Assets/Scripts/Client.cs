@@ -49,6 +49,7 @@ public class Client : MonoBehaviour
     private Coroutine text_globe_coroutine;
     private Coroutine shutup_routine;
 
+    private bool received_order = false;
     private void Start()
     {
         text_globe = GetComponentInChildren<TextMeshPro>();
@@ -65,7 +66,7 @@ public class Client : MonoBehaviour
     private void SelectDrink()
     {
         order = GameManager.GetRandomDrink();
-        text_globe.text = string.Format("Can I have a: <color=#8888EE>{0}</color> please?",order.NameOfDrink);
+        text_globe.text = string.Format("Dame un <color=#8888EE>{0}</color>, por favor.",order.NameOfDrink);
         if (OnRequest != null) OnRequest(order);
         if (onAnyClientOrdered != null) onAnyClientOrdered(this);
     }
@@ -127,6 +128,8 @@ public class Client : MonoBehaviour
 
     private void End()
     {
+        Events.OnAddMistake(received_order ? 0 : order.reagents.Length);
+
         if(OnClientEnded != null)
             OnClientEnded(14);//TESTING VALUE
         if (onAnyClientEnded != null) onAnyClientEnded(this);
@@ -188,11 +191,12 @@ public class Client : MonoBehaviour
     }
     public void RateBeberage (bool wasOk, List<string> left_out = null )
     {
+        received_order = true;
         Invoke("WalkOut",ordering_time);
         if (wasOk)
         {
           if (onPleased != null) onPleased();
-            text_globe.text = string.Format("<color=green>Thanks it was delicious!</color>");
+            text_globe.text = string.Format("<color=green>¡Gracias, está muy rico!</color>");
             ShoutOrder();
         }
         else
@@ -200,17 +204,20 @@ public class Client : MonoBehaviour
           if (onDisappointed != null) onDisappointed();
             if (left_out != null && left_out.Count > 0)
             {
-                text_globe.text = string.Format("Hey, {0} doesn't contain ", order.NameOfDrink);
+                text_globe.text = string.Format("Hey, el {0} no lleva ", order.NameOfDrink);
                 for (int i = 0; i < left_out.Count; i++)
                 {
                     text_globe.text += string.Format("<color=red>{0}</color>",left_out[i]);
                     if (i < left_out.Count - 1)
-                        text_globe.text += " and ";
+                        text_globe.text += " ni ";
                 }
-
-            }else
-                text_globe.text = "<color=red>Hey this drink sucks!</color>";
-            
+                Events.OnAddMistake(left_out.Count);
+            }
+            else
+            {
+                text_globe.text = "<color=red>¡Esto sabe horrible!</color>";
+                Events.OnAddMistake(order.reagents.Length);
+            }
             ShoutOrder();
         }
         current_state = ClientStates.Walkout;
