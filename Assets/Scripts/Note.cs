@@ -20,8 +20,15 @@ public class Note : MonoBehaviour
         text_mesh = GetComponentInChildren<TextMeshPro>();
         start_position = transform.position;
         start_rotation = transform.rotation;
+
+        Events.OnNoteReset += Reset;
     }
 
+    public void Reset()
+    {
+        if(zoommed)
+            Toggle();
+    }
     public void Toggle()
     {
       speaker.PlayOneShot(sfx);
@@ -41,11 +48,13 @@ public class Note : MonoBehaviour
         transform.SetParent(GameManager.camera_reference.transform);
         var start = transform.localPosition;
         var start_rot = transform.localRotation;
+        var forward=   GameManager.camera_reference.transform.InverseTransformDirection(GameManager.camera_reference.transform.forward)*2;
+        var left =  GameManager.camera_reference.transform.InverseTransformDirection(GameManager.camera_reference.transform.right)*1.5f;
         float counter = 0.0f;
         while (counter < 1)
         {
             counter += Time.deltaTime / 0.25f;
-            transform.localPosition = Vector3.Lerp(start, Vector3.zero + GameManager.camera_reference.transform.InverseTransformDirection(GameManager.camera_reference.transform.forward), counter);
+            transform.localPosition = Vector3.Lerp(start, Vector3.zero + forward - left, counter);
             transform.localRotation = Quaternion.Lerp(start_rot,Quaternion.identity, counter);
             yield return null;
         }

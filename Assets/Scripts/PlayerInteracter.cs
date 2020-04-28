@@ -38,12 +38,21 @@ public class PlayerInteracter : NonPersistantSingleton<PlayerInteracter> {
       {
         Note note = hit.collider.GetComponent<Note>();
         if (Input.GetMouseButtonDown(1) && !note.Zoommed) return;
+        if(Events.OnNoteReset != null)
+          Events.OnNoteReset();
         note.Toggle();
       }
-      else if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("Client")))
+      else if (Physics.Raycast(ray, out hit, 10, LayerMask.GetMask("Client")))//CLIENT
       {
         hit.collider.GetComponent<Client>().ShoutOrder();
       }
+    }
+    
+    //NOTE RESET
+    if (Input.GetKeyDown(KeyCode.C))
+    {
+      if(Events.OnNoteReset != null)
+        Events.OnNoteReset();
     }
   }
 

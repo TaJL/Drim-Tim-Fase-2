@@ -79,13 +79,16 @@ public class Rockola : MonoBehaviour
         PlayNext();
     }
 
-  public void TogglePower () {
+  public void TogglePower ()
+  {
     StopAllCoroutines();
     if (this.enabled) {
       this.enabled = false;
       audio_source.Stop();
       screen_text.text = "";
     } else {
+        if(Events.OnRockolaPowered != null)
+            Events.OnRockolaPowered();
       this.enabled = true;
       audio_source.Play();
       PlayClip(current_playing);

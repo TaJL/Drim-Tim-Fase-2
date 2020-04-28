@@ -1814,6 +1814,9 @@ MonoBehaviour:
   focusedLight: {fileID: 7744425660256511126}
   unfocusedLight: {fileID: 7744425660256511125}
   target: {fileID: 1138307427}
+  speaker: {fileID: 0}
+  take: {fileID: 0}
+  drop: {fileID: 0}
   _slot: {fileID: 0}
 --- !u!1001 &617774653
 PrefabInstance:
@@ -5454,7 +5457,7 @@ Light:
   m_BounceIntensity: 3
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.41e-43, y: 0, z: 7.41e-43, w: 1.0493e-41}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -8395,6 +8398,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 427057471539233620, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 474947046729823404, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_Name
@@ -8521,6 +8529,11 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6141161750461267006, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6473038641437439761, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8619,12 +8632,12 @@ PrefabInstance:
     - target: {fileID: 7744425659706448704, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 1.438e-42
       objectReference: {fileID: 0}
     - target: {fileID: 7744425659706448704, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 2.3510647e-38
+      value: 1.01e-43
       objectReference: {fileID: 0}
     - target: {fileID: 7744425659706448704, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8684,17 +8697,22 @@ PrefabInstance:
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: NaN
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 1.435e-42
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 7.4e-43
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660783574880, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8751,6 +8769,31 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8461582176532029809, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461582176532029809, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461582176532029809, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461582176532029809, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461582176532029809, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8533501222481902665, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_IsActive
@@ -8760,6 +8803,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -10.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003902400846076436, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9164595046549281174, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8771,10 +8819,20 @@ PrefabInstance:
       propertyPath: reagentData.drunknessPerUnit
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 9164595046549281174, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: "Que extra\xF1a etiqueta, tiene un dibujo de un sombrero."
+      objectReference: {fileID: 0}
     - target: {fileID: 9164595046733103377, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: reagentData.reagentName
       value: Soda
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595046733103377, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Esa es mi gaseosa favorita.
       objectReference: {fileID: 0}
     - target: {fileID: 9164595046736807989, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8785,6 +8843,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reagentData.drunknessPerUnit
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595046736807989, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Esto es vino.
       objectReference: {fileID: 0}
     - target: {fileID: 9164595046823445286, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8811,6 +8874,11 @@ PrefabInstance:
       propertyPath: reagentData.drunknessPerUnit
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 9164595046823445286, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Creo que eso es whiskey...
+      objectReference: {fileID: 0}
     - target: {fileID: 9164595047078103897, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: reagentData.reagentName
@@ -8836,6 +8904,11 @@ PrefabInstance:
       propertyPath: reagentData.drunknessPerUnit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9164595047078103897, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Eso es alguna especie de licor.
+      objectReference: {fileID: 0}
     - target: {fileID: 9164595047212192264, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: reagentData.reagentName
@@ -8845,6 +8918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reagentData.liquidColor.a
       value: 0.45490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595047212192264, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Soda...
       objectReference: {fileID: 0}
     - target: {fileID: 9164595047428029201, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8871,6 +8949,11 @@ PrefabInstance:
       propertyPath: reagentData.drunknessPerUnit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9164595047428029201, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: "Una bebida transparent, no estoy seguro qu\xE9 es..."
+      objectReference: {fileID: 0}
     - target: {fileID: 9164595047657255186, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: reagentData.reagentName
@@ -8880,6 +8963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reagentData.drunknessPerUnit
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595047657255186, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: "No tengo ni idea qu\xE9 es eso."
       objectReference: {fileID: 0}
     - target: {fileID: 9164595047708320641, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8891,6 +8979,11 @@ PrefabInstance:
       propertyPath: reagentData.drunknessPerUnit
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 9164595047708320641, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: "Eso es lo que siempre toma mi amigo cordobes \xBFC\xF3mo se llamaba...?"
+      objectReference: {fileID: 0}
     - target: {fileID: 9164595047920213091, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: reagentData.reagentName
@@ -8900,6 +8993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reagentData.drunknessPerUnit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595047920213091, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: "No s\xE9 qu\xE9 es eso."
       objectReference: {fileID: 0}
     - target: {fileID: 9164595048072686945, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8915,6 +9013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reagentData.liquidColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595048072686945, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Ugh, eso parece jarabe.
       objectReference: {fileID: 0}
     - target: {fileID: 9164595048222837222, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8935,6 +9038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reagentData.liquidColor.b
       value: 0.4481132
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164595048222837222, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: hint
+      value: Esa botella tiene un dibujo de una fruta, no llego a ver cual.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33ba8fb53260f9c4b9c30f0182638a5e, type: 3}

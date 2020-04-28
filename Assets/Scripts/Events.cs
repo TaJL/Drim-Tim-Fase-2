@@ -10,4 +10,6 @@ public class Events
     //UI
     //public static UnityAction 
     public static UnityAction<float> OnUIUpdateRating;
+    public static UnityAction OnRockolaPowered;
+    public static UnityAction OnNoteReset;
 }
