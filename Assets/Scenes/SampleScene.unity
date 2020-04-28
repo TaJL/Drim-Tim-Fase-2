@@ -56,7 +56,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
-    m_BakeResolution: 40
+    m_BakeResolution: 20
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
@@ -1890,37 +1890,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rockola
       objectReference: {fileID: 0}
+    - target: {fileID: 1930268228376031376, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1930268228774925546, guid: b34ff32820cc0ca428e6367232153604,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409978805699201742, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.4707625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409978805699201742, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.008545237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632528609447976837, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5376893789346964144, guid: b34ff32820cc0ca428e6367232153604,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7621455432629449755, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34ff32820cc0ca428e6367232153604, type: 3}
---- !u!1 &617774654 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1930268228376031376, guid: b34ff32820cc0ca428e6367232153604,
-    type: 3}
-  m_PrefabInstance: {fileID: 617774653}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &617774655
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617774654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &626034012
 PrefabInstance:
   m_ObjectHideFlags: 0
