@@ -43,7 +43,7 @@ public class UIConversationParticipant : MonoBehaviour {
     float required = TutorialConversationManager.LECTURE_TIME_PER_WORD *
       (message.Split(' ').Length-1);
 
-    while (elapsed < required && !Input.GetKeyDown(KeyCode.Space)) {
+    while (!Input.GetKeyDown(KeyCode.Space)) {
       yield return null;
       elapsed += Time.deltaTime;
       if (elapsed > required - 1) {

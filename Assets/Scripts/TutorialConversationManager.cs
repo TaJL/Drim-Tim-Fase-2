@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using MEC;
+using UnityEngine.UI;
 
 public class TutorialConversationManager : MonoBehaviour {
   public static event System.Action<TutorialConversation> onConversationEnd;
@@ -19,10 +20,6 @@ public class TutorialConversationManager : MonoBehaviour {
 
       if (conversation.entries[i].author == ConversationParticipant.Professor) {
         yield return StartCoroutine(professor._Say(conversation.entries[i].message));
-      }
-      while (!Input.GetKeyDown(KeyCode.Space))
-      {
-        yield return Timing.WaitForOneFrame;
       }
     }
 
