@@ -43,6 +43,11 @@ PrefabInstance:
       propertyPath: seat
       value: 
       objectReference: {fileID: 5839543251907518170}
+    - target: {fileID: 4597705538403911448, guid: d949e25f7f5721c4788a78c4f8290780,
+        type: 3}
+      propertyPath: shake
+      value: 
+      objectReference: {fileID: 8300000, guid: 1921fd108a2ef114c83f4be15431876a, type: 3}
     - target: {fileID: 5323861797348236343, guid: d949e25f7f5721c4788a78c4f8290780,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
