@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NonPersistantSingleton<GameManager>
 {
@@ -53,7 +54,17 @@ public class GameManager : NonPersistantSingleton<GameManager>
     public void AddMistake(int amount)
     {
       errors_counter += amount;
+      if (errors_counter >= 10.0f)
+      {
+        Invoke("GameOver",3);
+      }
+
       Events.OnUIUpdateRating(1.0f-(errors_counter / 10.0f));
+    }
+
+    private void GameOver()
+    {
+      SceneManager.LoadScene("Scenes/GameOverScene");
     }
     public static Recipe GetRandomDrink()
     {

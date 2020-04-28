@@ -46,13 +46,27 @@ public class Hinter : MonoBehaviour
                             text_mesh.text = interactable.target.GetComponent<Bottle>().hint;
                         }
                     }
+                    else
+                    {
+                        Reset();
+
+                    }
                 }
+            }
+            else
+            {
+                Reset();
             }
         }
         else if(last_pointed != null)
         {
-            last_pointed = null;
-            text_mesh.text = "";
+         Reset();
         }
+    }
+
+    private void Reset()
+    {
+        last_pointed = null;
+        text_mesh.text = "";
     }
 }
