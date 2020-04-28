@@ -6185,6 +6185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 292021073}
     m_Modifications:
+    - target: {fileID: -8650931869291084451, guid: 41884afbee8cccc4baadb996a43b9dbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4620735457031903531, guid: 41884afbee8cccc4baadb996a43b9dbf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7490,6 +7495,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0475beefba2c59a49befdccaf1e5a458, type: 2}
+    - target: {fileID: -5491165177835396009, guid: 992fb924df0dad6498d0375e759d1efb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 992fb924df0dad6498d0375e759d1efb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8549,6 +8559,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4551697725086916607, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964786312825150877, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964786313236954906, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964786313351974738, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5686297867073427802, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9002,7 +9032,7 @@ PrefabInstance:
     - target: {fileID: 9164595047428029201, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: hint
-      value: "Una bebida transparent, no estoy seguro qu\xE9 es..."
+      value: "Una bebida transparente, no estoy seguro qu\xE9 es..."
       objectReference: {fileID: 0}
     - target: {fileID: 9164595047657255186, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -9047,7 +9077,7 @@ PrefabInstance:
     - target: {fileID: 9164595047920213091, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: hint
-      value: "No s\xE9 qu\xE9 es eso."
+      value: Eso es lo que mi abuelo tomaba luego de cenar, creo que era Ron.
       objectReference: {fileID: 0}
     - target: {fileID: 9164595048072686945, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
