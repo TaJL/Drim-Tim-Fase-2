@@ -8,6 +8,7 @@ using  UnityEngine.Events;
 public class Client : MonoBehaviour
 {
   public static event System.Action<Client> onAnyClientEnded;
+  public static event System.Action<Client> onAnyClientOrdered;
   public event System.Action onPleased;
   public event System.Action onDisappointed;
   public event System.Action onStartTalking;
@@ -67,6 +68,7 @@ public class Client : MonoBehaviour
         order = GameManager.GetRandomDrink();
         text_globe.text = string.Format("Dame un <color=#8888EE>{0}</color>, por favor.",order.NameOfDrink);
         if (OnRequest != null) OnRequest(order);
+        if (onAnyClientOrdered != null) onAnyClientOrdered(this);
     }
     public void ShoutOrder()
     {

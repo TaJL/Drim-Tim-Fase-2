@@ -12,6 +12,9 @@ public class Note : MonoBehaviour
     private bool zoommed = false;
     private Vector3 start_position;
     private Quaternion start_rotation;
+  public AudioSource speaker;
+  public AudioClip sfx;
+
     void Start()
     {
         text_mesh = GetComponentInChildren<TextMeshPro>();
@@ -21,6 +24,7 @@ public class Note : MonoBehaviour
 
     public void Toggle()
     {
+      speaker.PlayOneShot(sfx);
         zoommed = !zoommed;
         if (zoommed)
         {
