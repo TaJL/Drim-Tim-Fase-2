@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class UIConversationParticipant : MonoBehaviour {
   public Animator portrait;
   public Animator animator;
-  public Text text;
+  public TextMeshProUGUI text;
 
   public IEnumerator _Say (string message) {
     float elapsed = 0;
