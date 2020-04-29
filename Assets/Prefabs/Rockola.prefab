@@ -29,7 +29,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1930268228376031370
 Transform:
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -721,6 +721,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!64 &4632528609447976837
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621455432629449755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4709278148361580564, guid: e7844858788aca34791cefd0c3074b14, type: 3}
 --- !u!1001 &861240962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,11 +842,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Left
       objectReference: {fileID: 0}
+    - target: {fileID: 7621455431835847321, guid: e7844858788aca34791cefd0c3074b14,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7844858788aca34791cefd0c3074b14, type: 3}
 --- !u!4 &5006512735631758744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e7844858788aca34791cefd0c3074b14,
+    type: 3}
+  m_PrefabInstance: {fileID: 861240962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7621455432629449755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7621455431835847321, guid: e7844858788aca34791cefd0c3074b14,
     type: 3}
   m_PrefabInstance: {fileID: 861240962}
   m_PrefabAsset: {fileID: 0}

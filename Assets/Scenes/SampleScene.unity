@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 512
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -44,20 +44,20 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
-    m_BakeResolution: 10
-    m_AtlasSize: 512
+    m_BakeResolution: 20
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: aec58d46d269c064d82218bf54296538,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -482,6 +482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 3ee02942d41fa1d4cb73598f04e39888,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3ee02942d41fa1d4cb73598f04e39888,
         type: 3}
@@ -1885,15 +1890,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rockola
       objectReference: {fileID: 0}
+    - target: {fileID: 1930268228376031376, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1930268228774925546, guid: b34ff32820cc0ca428e6367232153604,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4409978805699201742, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.4707625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409978805699201742, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.008545237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632528609447976837, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5376893789346964144, guid: b34ff32820cc0ca428e6367232153604,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621455432629449755, guid: b34ff32820cc0ca428e6367232153604,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34ff32820cc0ca428e6367232153604, type: 3}
@@ -6155,6 +6185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 292021073}
     m_Modifications:
+    - target: {fileID: -8650931869291084451, guid: 41884afbee8cccc4baadb996a43b9dbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4620735457031903531, guid: 41884afbee8cccc4baadb996a43b9dbf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6523,7 +6558,7 @@ PrefabInstance:
     - target: {fileID: 4105110357191360063, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.13
+      value: 19.924
       objectReference: {fileID: 0}
     - target: {fileID: 4105110357191360063, guid: d1f005f7eda3ec245b6c9d07e612c8df,
         type: 3}
@@ -7460,6 +7495,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0475beefba2c59a49befdccaf1e5a458, type: 2}
+    - target: {fileID: -5491165177835396009, guid: 992fb924df0dad6498d0375e759d1efb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 992fb924df0dad6498d0375e759d1efb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8519,6 +8559,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4551697725086916607, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964786312825150877, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964786313236954906, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964786313351974738, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5686297867073427802, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8553,6 +8613,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425659375515614, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425659375515614, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425659375515615, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744425659375515615, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
+        type: 3}
+      propertyPath: m_Resolution
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 7744425659585719356, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8627,7 +8707,7 @@ PrefabInstance:
     - target: {fileID: 7744425659706448704, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_Range
-      value: 6.919907
+      value: 11.37
       objectReference: {fileID: 0}
     - target: {fileID: 7744425659706448704, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8657,7 +8737,7 @@ PrefabInstance:
     - target: {fileID: 7744425659706448705, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.47
+      value: -4.45
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660086226628, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8697,22 +8777,22 @@ PrefabInstance:
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 1
+      value: 5.179e-42
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.435e-42
+      value: 1.01e-43
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1.0000001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660426309290, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: NaN
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7744425660783574880, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8952,7 +9032,7 @@ PrefabInstance:
     - target: {fileID: 9164595047428029201, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: hint
-      value: "Una bebida transparent, no estoy seguro qu\xE9 es..."
+      value: "Una bebida transparente, no estoy seguro qu\xE9 es..."
       objectReference: {fileID: 0}
     - target: {fileID: 9164595047657255186, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
@@ -8997,7 +9077,7 @@ PrefabInstance:
     - target: {fileID: 9164595047920213091, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}
       propertyPath: hint
-      value: "No s\xE9 qu\xE9 es eso."
+      value: Eso es lo que mi abuelo tomaba luego de cenar, creo que era Ron.
       objectReference: {fileID: 0}
     - target: {fileID: 9164595048072686945, guid: 33ba8fb53260f9c4b9c30f0182638a5e,
         type: 3}

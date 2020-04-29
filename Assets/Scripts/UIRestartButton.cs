@@ -7,6 +7,6 @@ public class UIRestartButton : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("Scenes/SampleScene");
+        SceneManager.LoadScene("Scenes/MainMenu");
     }
 }
