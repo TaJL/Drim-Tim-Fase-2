@@ -15,17 +15,15 @@ MonoBehaviour:
   entries:
   - message: 'Controles: WASD para moverte y ESPACIO para saltar'
     author: 1
-  - message: "\xA1Por el amor a todo lo que embriaga! \xBFEn serio creiste que te
-      dejaria saltar cerca de las botellas?"
+  - message: "\xA1Por el amor a todo lo que embriaga! \xBFEn serio cre\xEDste que
+      te dejar\xEDa saltar cerca de las botellas?"
     author: 1
-  - message: Te contrate para remplazar al chico que no quiso darle otro trago a
-      ese musculoso de mas de dos metros
+  - message: "Te contrate para reemplazar al chico que no quiso darle otro trago
+      a ese musculoso de m\xE1s de dos metros"
     author: 1
-  - message: 'Por ahora te estare guiando en lo escencial
-
-      Puedes llamarme
-      Gertrudis'
+  - message: "Por ahora te estar\xE9 guiando en lo esencial\r\nPor cierto\r\nYo soy
+      Ramona Olga Nashil, due\xF1a de este local y tel\xE9pata en los ratos libres\r\n\n"
     author: 1
-  - message: "Pon algo de musica cari\xF1o, asi la gente podra distraerse de tu cara
-      cuando entre a comprar"
+  - message: "Pon algo de musica cari\xF1o, asi la gente podr\xE1 distraerse de tu
+      cara cuando entre a comprar"
     author: 1

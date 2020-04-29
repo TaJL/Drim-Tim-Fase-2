@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08511dba277f1374d914cdf055b3eedf, type: 3}
   m_Name: TutorialConversation
   m_EditorClassIdentifier: 
-  entries: []
+  entries:
+  - message: 342342342343
+    author: 0
