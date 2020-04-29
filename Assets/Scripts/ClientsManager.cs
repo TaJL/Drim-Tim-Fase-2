@@ -51,6 +51,8 @@ public class ClientsManager : MonoBehaviour
         }
     }
 
+
+
   public Client SpawnClient () {
     if (!bar) Initialize();
 
@@ -68,6 +70,15 @@ public class ClientsManager : MonoBehaviour
     public void ClientStandUp(Seat seat)
     {
         seat.Free();
+        if (bar.OccipiedSeatsCount() == 0)
+        {
+            Seat random_seat = bar.GetRandomFreeSeat();
+            if (random_seat != null)
+            {
+                SpawnClient(random_seat);
+            }
+        }
+
         if(pending_clients.Count > 0)
         {
             print("pending client spawned");

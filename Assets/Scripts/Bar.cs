@@ -15,7 +15,16 @@ public class Bar : MonoBehaviour
           seats[i] = new Seat(transform.GetChild(i).position, i);
         }
     }
-
+    public int OccipiedSeatsCount()
+    {
+        int x = 0;
+        for (int i = 0; i < seats.Length; i++)
+        {
+            if (!seats[i].IsFree)
+                x += 1;
+        }
+        return x;
+    }
   public Seat GetSeatAt (int index) {
     return seats[index];
   }
