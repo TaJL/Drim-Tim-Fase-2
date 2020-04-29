@@ -191,6 +191,7 @@ public class Client : MonoBehaviour
     }
     public void RateBeberage (bool wasOk, List<string> left_out = null )
     {
+      this.wasOk = wasOk;
         received_order = true;
         Invoke("WalkOut",ordering_time);
         if (wasOk)
