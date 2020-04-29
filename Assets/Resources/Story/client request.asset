@@ -13,12 +13,44 @@ MonoBehaviour:
   m_Name: client request
   m_EditorClassIdentifier: 
   entries:
-  - message: "\xE9sto se triggerea 2 segundos despu\xE9s de que el cliente llega
-      a la barra"
+  - message: 'A trabajar que tu sueldo no se paga solo
+
+      Vuelve a la barra para
+      empezar'
     author: 1
-  - message: clic sobre las botellas para agarrarlas y clic derecho para soltarlas
+  - message: Pulsa ESPACIO para atender al cliente
     author: 1
-  - message: con una botella seleccionada, clic en el mixer para crear una bebida
+  - message: "WAJAJAJA! Eres m\xE1s f\xE1cil que este tutorial cari\xF1o\r\nTan solo
+      haz clic sobre el cliente para recoger su orden\r"
     author: 1
-  - message: puedes poner cuantas bebidas quieras
+  - message: 'Si se te olvida puedes hacer que repita
+
+      Pero se cortes, no como
+      el musculoso de dos metros'
+    author: 1
+  - message: "Si se te olvida puedes hacer que repita, no ser\xE1s demasiada molestia\r\nPero
+      s\xE9 cort\xE9s, no como el musculoso de dos metros\r"
+    author: 1
+  - message: Esa receta esta en una de las notas de la barra
+    author: 1
+  - message: "Si te sientes c\xF3modo dejala con C, si eres una gallina tenla en
+      la mano mientras preparas el trago\r\nyo no te juzgo mucho\r"
+    author: 1
+  - message: "Intenta respetar las medidas que aparecen ahy, ahi \u2026 ay?\r\n\xA1Como
+      sea!\r\nEs una vieja receta familiar de AnanaA\xF1ejo666\r\nO eso dec\xEDa
+      su perfil de Sabiduria Alcoholica\r"
+    author: 1
+  - message: "Se que te equivocaras m\xE1s de una vez, pero no te preocupes\r\npuedes
+      tirar la mezcla a la pileta y empezar de nuevo cuando quieras\r"
+    author: 1
+  - message: 'Y el dinero no es un problema, no para mi
+
+      Esto lo descuento
+      de tu sueldo'
+    author: 1
+  - message: "Una vez listo dejaselo al cliente en su vaso como todo un campe\xF3n"
+    author: 1
+  - message: "Ya te la puedes arreglar por tu cuenta\r\nNo dejes a demasiados clientes
+      insatisfechos o habr\xE1 recortes de personal\r\nY recuerda las sigla RAS\r\nR\xE1pido,
+      Atento y Sinarruinarla\r"
     author: 1

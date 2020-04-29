@@ -67,9 +67,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5e9c5601cb87b3f4694a57b12f6f0e1a, type: 3}
   - {fileID: 8300000, guid: 4702030d60966cc47a20040fdea2e097, type: 3}
   - {fileID: 8300000, guid: 4fea3159fff949f438b8feb5f99bf86b, type: 3}
+  - {fileID: 8300000, guid: 225f005569971584b81d3e5cdda0e18c, type: 3}
+  - {fileID: 8300000, guid: 8fd1e2083a304e34cb843739fd13ebd8, type: 3}
   audio_source: {fileID: 1930268228376031383}
   screen_text: {fileID: 1930268228774925556}
   light: {fileID: 5376893789346964144}
+  click: {fileID: 0}
 --- !u!82 &1930268228376031383
 AudioSource:
   m_ObjectHideFlags: 0
