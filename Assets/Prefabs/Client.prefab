@@ -51,7 +51,7 @@ MonoBehaviour:
   wasOk: 0
   walkin_time: 3
   ordering_time: 3
-  waiting_time: 30
+  waiting_time: 60
   walkout_time: 3
   text_globe_curve:
     serializedVersion: 2
