@@ -27,12 +27,13 @@ public class Rockola : MonoBehaviour
     }
 
   void Awake () {
-    initialVolume = audio_source.volume;
+    // initialVolume = audio_source.volume;
   }
 
   void OnEnable () {
     audio_source.volume = 0;
     volume.target = initialVolume;
+    audio_source.Play();
   }
 
     private void Update()
