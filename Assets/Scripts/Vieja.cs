@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Vieja : MonoBehaviour {
-  void OnEnable () {
+  void Awake () {
     gameObject.SetActive(false);
     GameManager.onGameOver += GameOver;
+  }
+
+  void OnDestroy () {
+    GameManager.onGameOver -= GameOver;
   }
 
   public void GameOver () {

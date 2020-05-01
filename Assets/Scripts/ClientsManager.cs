@@ -25,6 +25,15 @@ public class ClientsManager : MonoBehaviour
         StartRoutine();
     }
 
+  void OnEnable () {
+    GameManager.onGameOver += () => {
+      this.enabled = false;
+      bar.enabled = false;
+      pending_clients = new Queue();
+      StopAllCoroutines();
+    };
+  }
+
   void Initialize () {
     bar = transform.GetChild(0).GetComponent<Bar>();
   }

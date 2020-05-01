@@ -50,6 +50,15 @@ public class Client : MonoBehaviour
     private Coroutine shutup_routine;
 
     private bool received_order = false;
+
+  void OnEnable () {
+    GameManager.onGameOver += GameOver;
+  }
+
+  void OnDisable () {
+    GameManager.onGameOver -= GameOver;
+  }
+
     private void Start()
     {
         text_globe = GetComponentInChildren<TextMeshPro>();
@@ -223,4 +232,10 @@ public class Client : MonoBehaviour
         }
         current_state = ClientStates.Walkout;
     }
+
+  public void GameOver () {
+    StopAllCoroutines();
+    ShutUp();
+    WalkOut();
+  }
 }

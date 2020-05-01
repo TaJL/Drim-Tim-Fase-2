@@ -26,6 +26,8 @@ public class GameManager : NonPersistantSingleton<GameManager>
 
   void OnEnable () {
     Client.onAnyClientEnded += HandleClientEnded;
+    score = 0;
+    errors_counter = 0;
   }
 
     private void Start()
@@ -53,13 +55,26 @@ public class GameManager : NonPersistantSingleton<GameManager>
         // }
     }
 
+  void OnDestroy () {
+    Events.OnAddMistake -= AddMistake;
+  }
+
+  void Update () {
+    #if UNITY_EDITOR
+    if (Input.GetKeyDown(KeyCode.Q)) {
+      if (onGameOver != null) onGameOver();
+      Invoke("GameOver",5);
+    }
+    #endif
+  }
+
     public void AddMistake(int amount)
     {
       errors_counter += amount;
       if (errors_counter >= 10.0f)
       {
         if (onGameOver != null) onGameOver();
-        Invoke("GameOver",10);
+        Invoke("GameOver",5);
       }
 
       Events.OnUIUpdateRating(1.0f-(errors_counter / 10.0f));
@@ -67,7 +82,7 @@ public class GameManager : NonPersistantSingleton<GameManager>
 
     private void GameOver()
     {
-      SceneManager.LoadScene("Scenes/GameOverScene");
+      SceneManager.LoadScene("Scenes/Credits");
     }
     public static Recipe GetRandomDrink()
     {

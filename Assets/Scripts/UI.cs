@@ -14,6 +14,10 @@ public class UI : MonoBehaviour
         Events.OnUIUpdateRating += UpdateRatings;
     }
 
+  void OnDisable () {
+    Events.OnUIUpdateRating -= UpdateRatings;
+  }
+
     public void UpdateRatings(float ratingPercentage)
     {
         ratingBar.fillAmount = ratingPercentage ;
