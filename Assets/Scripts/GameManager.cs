@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : NonPersistantSingleton<GameManager>
 {
+  public static event System.Action onGameOver;
+
   public static int score = 0;
   public static int errors_counter = 0;
   public static Recipe[] all_recipes;
@@ -56,7 +58,8 @@ public class GameManager : NonPersistantSingleton<GameManager>
       errors_counter += amount;
       if (errors_counter >= 10.0f)
       {
-        Invoke("GameOver",3);
+        if (onGameOver != null) onGameOver();
+        Invoke("GameOver",10);
       }
 
       Events.OnUIUpdateRating(1.0f-(errors_counter / 10.0f));

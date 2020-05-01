@@ -47,11 +47,13 @@ public class Rockola : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Right"))
                 {
-                    PlayNext();
+                  audio_source.PlayOneShot(click);
+                  PlayNext();
                 }
                 else if(hit.collider.CompareTag("Left"))
                 {
-                    PlayPrevious();
+                  audio_source.PlayOneShot(click);
+                  PlayPrevious();
                 }
             }
         }
@@ -76,7 +78,6 @@ public class Rockola : MonoBehaviour
     public void PlayNext()
     {
       if (_fader != null) StopCoroutine(_fader);
-      audio_source.PlayOneShot(click);
       current_playing = (current_playing + clips.Length + 1) % clips.Length;
       SetText();
 
@@ -87,7 +88,6 @@ public class Rockola : MonoBehaviour
     public void PlayPrevious()
     {
       if (_fader != null) StopCoroutine(_fader);
-      audio_source.PlayOneShot(click);
       current_playing = (current_playing + clips.Length - 1) % clips.Length;
       SetText();
 
@@ -98,11 +98,11 @@ public class Rockola : MonoBehaviour
     private IEnumerator WaitUntilEnd()
     {
       yield return new WaitUntil(delegate {
-          return (audio_source.time - audio_source.clip.length > volume.smoothTime);
+          return ((audio_source.clip.length - audio_source.time) <= volume.smoothTime * 2);
         });
-      StartCoroutine(_FadeOutFadeIn());
-      yield return new WaitUntil(() => !audio_source.isPlaying);
-        PlayNext();
+      StartCoroutine(_FadeOutFadeIn(() => { PlayNext(); }));
+      // yield return new WaitUntil(() => !audio_source.isPlaying);
+      // PlayNext();
     }
 
   public void TogglePower ()
