@@ -23,6 +23,11 @@ public class PlayerCamera : MonoBehaviour {
     rotation_y = transform.rotation.eulerAngles.y;
     current = normal;
     camera.position = normal.position;
+
+    #if !UNITY_EDITOR
+    speedX = 5;
+    speedY = 4;
+    #endif
   }
 
   void Update ()

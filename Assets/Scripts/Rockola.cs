@@ -12,6 +12,10 @@ public class Rockola : MonoBehaviour
     public TextMeshPro screen_text;
   public Light light;
   public AudioClip click;
+  public VolumeSmoothDamp volume;
+  public float initialVolume;
+
+  Coroutine _fader;
 
     private Coroutine wait_routine;
     // Start is called before the first frame update
@@ -21,6 +25,15 @@ public class Rockola : MonoBehaviour
         screen_text = GetComponentInChildren<TextMeshPro>();
         PlayClip(current_playing);
     }
+
+  void Awake () {
+    initialVolume = audio_source.volume;
+  }
+
+  void OnEnable () {
+    audio_source.volume = 0;
+    volume.target = initialVolume;
+  }
 
     private void Update()
     {
@@ -48,10 +61,9 @@ public class Rockola : MonoBehaviour
     {
         if(clips.Length == 0)
             return;
-        
+
         audio_source.clip = clips[index];
         audio_source.Play();
-        SetText();
         if(wait_routine != null)
             StopCoroutine(wait_routine);
         wait_routine = StartCoroutine(WaitUntilEnd());
@@ -59,23 +71,37 @@ public class Rockola : MonoBehaviour
 
     private void SetText()
     {
-        screen_text.text = string.Format("Now playing: {0}",audio_source.clip.name);
+      screen_text.text = string.Format("Now playing: {0}",clips[current_playing].name);
     }
     public void PlayNext()
     {
+      if (_fader != null) StopCoroutine(_fader);
       audio_source.PlayOneShot(click);
-        current_playing = (current_playing + clips.Length + 1) % clips.Length;
-        PlayClip(current_playing);
+      current_playing = (current_playing + clips.Length + 1) % clips.Length;
+      SetText();
+
+      _fader = StartCoroutine(_FadeOutFadeIn(() => {
+            PlayClip(current_playing);
+          }));
     }
     public void PlayPrevious()
     {
+      if (_fader != null) StopCoroutine(_fader);
       audio_source.PlayOneShot(click);
-        current_playing = (current_playing + clips.Length - 1) % clips.Length;
-        PlayClip(current_playing);
+      current_playing = (current_playing + clips.Length - 1) % clips.Length;
+      SetText();
+
+      _fader = StartCoroutine(_FadeOutFadeIn(() => {
+            PlayClip(current_playing);
+          }));
     }
     private IEnumerator WaitUntilEnd()
     {
-        yield return new WaitUntil(delegate { return !audio_source.isPlaying; });
+      yield return new WaitUntil(delegate {
+          return (audio_source.time - audio_source.clip.length > volume.smoothTime);
+        });
+      StartCoroutine(_FadeOutFadeIn());
+      yield return new WaitUntil(() => !audio_source.isPlaying);
         PlayNext();
     }
 
@@ -92,9 +118,20 @@ public class Rockola : MonoBehaviour
       this.enabled = true;
       audio_source.Play();
       PlayClip(current_playing);
+      SetText();
     }
 
     light.enabled = this.enabled;
     audio_source.PlayOneShot(click);
+  }
+
+  IEnumerator _FadeOutFadeIn (System.Action action = null) {
+    volume.target = 0;
+    yield return new WaitForSeconds(volume.smoothTime);
+    if (action != null) {
+      action();
+    }
+    volume.target = initialVolume;
+    _fader = null;
   }
 }

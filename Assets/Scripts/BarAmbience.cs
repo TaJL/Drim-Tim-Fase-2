@@ -19,6 +19,6 @@ public class BarAmbience : MonoBehaviour {
   }
 
   void UpdateSpeaker () {
-    target = Mathf.Lerp(0, 1, (clientsInBar - 2) / 3f);
+    target = Mathf.Lerp(0, 1, (clientsInBar) / 3f);
   }
 }
